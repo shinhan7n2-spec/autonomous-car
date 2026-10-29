@@ -1,0 +1,62 @@
+[
+  {
+    "file": "라즈베리.stl",
+    "bytes": 1483784,
+    "triangles": 29674,
+    "axis_extents_raw_units": [
+      56.0,
+      88.0,
+      24.0
+    ]
+  },
+  {
+    "file": "리포배터리.stl",
+    "bytes": 1309584,
+    "triangles": 26190,
+    "axis_extents_raw_units": [
+      37.0,
+      104.0,
+      25.0
+    ]
+  },
+  {
+    "file": "메카넘휠.stl",
+    "bytes": 125008184,
+    "triangles": 2500162,
+    "axis_extents_raw_units": [
+      97.0308837890625,
+      97.63753509521484,
+      58.594207763671875
+    ]
+  },
+  {
+    "file": "모터.stl",
+    "bytes": 51721984,
+    "triangles": 1034438,
+    "axis_extents_raw_units": [
+      23.296703338623047,
+      67.96418762207031,
+      27.553253173828125
+    ]
+  },
+  {
+    "file": "보조배터리.stl",
+    "bytes": 922184,
+    "triangles": 18442,
+    "axis_extents_raw_units": [
+      68.5,
+      140.0,
+      16.5
+    ]
+  },
+  {
+    "file": "캐스터 휠.stl",
+    "bytes": 65984384,
+    "triangles": 1319686,
+    "axis_extents_raw_units": [
+      58.60633087158203,
+      77.74361419677734,
+      74.484130859375
+    ]
+  }
+]

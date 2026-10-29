@@ -1,0 +1,184 @@
+{
+  "status": "mechanical service design; no electrical/charging verification",
+  "original_files_unchanged": true,
+  "reference_geometry_unchanged": true,
+  "reference_scales_one": true,
+  "hardware": "4 supplied M3x16 bolts and M3 nuts for two rear gates; actual quantities/head shape unverified",
+  "battery_motion": "negative Y straight withdrawal after disconnecting and removing corresponding rear gate; 165mm BANK / 155mm LIPO swept clearance",
+  "standoff_move_mm": [
+    {
+      "from": [
+        -69,
+        -59
+      ],
+      "to": [
+        8,
+        -59
+      ]
+    },
+    {
+      "from": [
+        -69,
+        64
+      ],
+      "to": [
+        -76,
+        64
+      ]
+    }
+  ],
+  "wire_notch_mm": [
+    24,
+    9
+  ],
+  "limits": [
+    "connector dimensions/locations and cable bend radius estimated, cables not included in sweep",
+    "no charger compatibility, charging behaviour or thermal test",
+    "no loaded shelf stiffness or vibration test",
+    "STL scan unit assumed mm; shape and scale unchanged"
+  ],
+  "parts": [
+    {
+      "name": "P01_한장바닥판_190x185x5",
+      "size_mm": [
+        190.0,
+        185.0,
+        45.0
+      ],
+      "nonmanifold_edges": 0,
+      "components": 1
+    },
+    {
+      "name": "P02_분리선반_150x130x4",
+      "size_mm": [
+        159.0,
+        132.0,
+        38.0
+      ],
+      "nonmanifold_edges": 0,
+      "components": 1
+    },
+    {
+      "name": "P10_해치백덮개",
+      "size_mm": [
+        172.0,
+        183.0,
+        86.5158920288086
+      ],
+      "nonmanifold_edges": 0,
+      "components": 1
+    },
+    {
+      "name": "P14_BANK_뒤잠금판",
+      "size_mm": [
+        88.0,
+        19.5,
+        4.0
+      ],
+      "nonmanifold_edges": 0,
+      "components": 1
+    },
+    {
+      "name": "P14_LIPO_뒤잠금판",
+      "size_mm": [
+        56.0,
+        28.0,
+        4.0
+      ],
+      "nonmanifold_edges": 0,
+      "components": 1
+    }
+  ],
+  "withdrawal_checks": [
+    {
+      "battery": "BANK",
+      "obstacle": "P01_한장바닥판_190x185x5",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "BANK",
+      "obstacle": "P02_분리선반_150x130x4",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "BANK",
+      "obstacle": "P10_해치백덮개",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "BANK",
+      "obstacle": "P04_보조배터리_고정가로대",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "BANK",
+      "obstacle": "P05_리포배터리_고정가로대",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "BANK",
+      "obstacle": "REF_M4_30_지지대",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "BANK",
+      "obstacle": "REF_M4_30_지지대.001",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "BANK",
+      "obstacle": "REF_M4_30_지지대.002",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "BANK",
+      "obstacle": "REF_M4_30_지지대.003",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "LIPO",
+      "obstacle": "P01_한장바닥판_190x185x5",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "LIPO",
+      "obstacle": "P02_분리선반_150x130x4",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "LIPO",
+      "obstacle": "P10_해치백덮개",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "LIPO",
+      "obstacle": "P04_보조배터리_고정가로대",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "LIPO",
+      "obstacle": "P05_리포배터리_고정가로대",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "LIPO",
+      "obstacle": "REF_M4_30_지지대",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "LIPO",
+      "obstacle": "REF_M4_30_지지대.001",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "LIPO",
+      "obstacle": "REF_M4_30_지지대.002",
+      "intersection_mm3": 0.0
+    },
+    {
+      "battery": "LIPO",
+      "obstacle": "REF_M4_30_지지대.003",
+      "intersection_mm3": 0.0
+    }
+  ]
+}

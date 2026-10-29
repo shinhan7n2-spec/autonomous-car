@@ -1,0 +1,144 @@
+{
+  "full_vertex_hash_matches": {
+    "라즈베리": true,
+    "리포배터리": true,
+    "보조배터리": true,
+    "모터": true,
+    "Motor_Right": true,
+    "메카넘휠": true,
+    "Wheel_Right_REFERENCE_ONLY": true,
+    "캐스터 휠": true
+  },
+  "structure_meshes": [
+    {
+      "name": "P01_한장바닥판_190x185x5",
+      "nonmanifold_edges": 0,
+      "volume_mm3": 175286.80161104567,
+      "dimensions": [
+        190.0,
+        185.0,
+        45.0
+      ]
+    },
+    {
+      "name": "P02_분리선반_150x130x4",
+      "nonmanifold_edges": 0,
+      "volume_mm3": 83664.58396659238,
+      "dimensions": [
+        150.0,
+        130.0,
+        7.0
+      ]
+    },
+    {
+      "name": "P09_카메라받침_추정",
+      "nonmanifold_edges": 0,
+      "volume_mm3": 5806.69422477908,
+      "dimensions": [
+        60.0,
+        26.0,
+        4.0
+      ]
+    },
+    {
+      "name": "P06_모터상부_추정끼움",
+      "nonmanifold_edges": 0,
+      "volume_mm3": 14436.350357534913,
+      "dimensions": [
+        20.0,
+        46.0,
+        25.96868896484375
+      ]
+    },
+    {
+      "name": "P07_모터하부_추정끼움",
+      "nonmanifold_edges": 0,
+      "volume_mm3": 10158.86679588195,
+      "dimensions": [
+        20.0,
+        46.0,
+        19.0
+      ]
+    },
+    {
+      "name": "P06_모터상부_추정끼움.001",
+      "nonmanifold_edges": 0,
+      "volume_mm3": 14436.350357534913,
+      "dimensions": [
+        20.0,
+        46.0,
+        25.96868896484375
+      ]
+    },
+    {
+      "name": "P07_모터하부_추정끼움.001",
+      "nonmanifold_edges": 0,
+      "volume_mm3": 10158.86679588195,
+      "dimensions": [
+        20.0,
+        46.0,
+        19.0
+      ]
+    },
+    {
+      "name": "P04_BANK_着脱固定バー",
+      "nonmanifold_edges": 0,
+      "volume_mm3": 2564.911427824767,
+      "dimensions": [
+        88.0,
+        10.0,
+        3.0
+      ]
+    },
+    {
+      "name": "P04_LIPO_着脱固定バー",
+      "nonmanifold_edges": 0,
+      "volume_mm3": 1604.9114538134445,
+      "dimensions": [
+        56.0,
+        10.0,
+        3.0
+      ]
+    },
+    {
+      "name": "REF_M4_30_지지대",
+      "nonmanifold_edges": 0,
+      "volume_mm3": 1149.7933473087949,
+      "dimensions": [
+        7.0,
+        7.0,
+        30.0
+      ]
+    },
+    {
+      "name": "REF_M4_30_지지대.001",
+      "nonmanifold_edges": 0,
+      "volume_mm3": 1149.7933473087949,
+      "dimensions": [
+        7.0,
+        7.0,
+        30.0
+      ]
+    },
+    {
+      "name": "REF_M4_30_지지대.002",
+      "nonmanifold_edges": 0,
+      "volume_mm3": 1149.7933473087949,
+      "dimensions": [
+        7.0,
+        7.0,
+        30.0
+      ]
+    },
+    {
+      "name": "REF_M4_30_지지대.003",
+      "nonmanifold_edges": 0,
+      "volume_mm3": 1149.7933473087949,
+      "dimensions": [
+        7.0,
+        7.0,
+        30.0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "status": "CONCEPT ONLY - NOT PRINT READY",
+  "base_z": [
+    62,
+    66
+  ],
+  "shelf_z": [
+    96,
+    100
+  ],
+  "spacer_length_mm": 30,
+  "assumed_structure": "All body, saddle, cradle, shelf sizes are visualization proposals, not measured or approved fabrication dimensions. No final bolt holes or threads. No camera body.",
+  "source_blend": "layout-preview-v1"
+}

@@ -1,0 +1,200 @@
+{
+  "status": "estimated clip mount; physical fit not verified",
+  "assumptions": {
+    "camera_body_mm": [
+      70,
+      34,
+      38
+    ],
+    "rear_flap_mm": [
+      48,
+      4,
+      36
+    ],
+    "blade_thickness_mm": 8,
+    "blade_top_z_mm": 171,
+    "front_back_clearance_mm": 1,
+    "clamp_initial_gap_mm": 1,
+    "hardware": "2 supplied common-set M3x20 bolts and M3 nuts; quantity not verified",
+    "M6": "not used; camera socket not assumed",
+    "rear_service_opening_mm": [
+      82,
+      38,
+      70
+    ]
+  },
+  "no_tape_or_additional_purchased_parts": true,
+  "original_files_unchanged": true,
+  "reference_meshes_unchanged": true,
+  "reference_scale_one": true,
+  "parts": [
+    {
+      "name": "P09_카메라_클립받침",
+      "size_mm": [
+        78.0,
+        51.515869140625,
+        30.0
+      ],
+      "nonmanifold_edges": 0,
+      "components": 1
+    },
+    {
+      "name": "P13_カメラ_뒤클립누름판",
+      "size_mm": [
+        74.0,
+        4.0,
+        12.0
+      ],
+      "nonmanifold_edges": 0,
+      "components": 1
+    },
+    {
+      "name": "P10_해치백덮개",
+      "size_mm": [
+        172.0,
+        183.0,
+        86.5158920288086
+      ],
+      "nonmanifold_edges": 0,
+      "components": 1
+    }
+  ],
+  "surface_checks": [
+    {
+      "a": "P09_카메라_클립받침",
+      "b": "P10_해치백덮개",
+      "surface_pairs": 0
+    },
+    {
+      "a": "P09_카메라_클립받침",
+      "b": "라즈베리",
+      "surface_pairs": 0
+    },
+    {
+      "a": "P09_카메라_클립받침",
+      "b": "P02_분리선반_150x130x4",
+      "surface_pairs": 0
+    },
+    {
+      "a": "P13_カメラ_뒤클립누름판",
+      "b": "P10_해치백덮개",
+      "surface_pairs": 0
+    },
+    {
+      "a": "P13_カメラ_뒤클립누름판",
+      "b": "라즈베리",
+      "surface_pairs": 0
+    },
+    {
+      "a": "P13_カメラ_뒤클립누름판",
+      "b": "P02_분리선반_150x130x4",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_카메라_몸체_치수추정",
+      "b": "P10_해치백덮개",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_카메라_몸체_치수추정",
+      "b": "라즈베리",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_카메라_몸체_치수추정",
+      "b": "P02_분리선반_150x130x4",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_카메라_힌지받침_추정",
+      "b": "P10_해치백덮개",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_카메라_힌지받침_추정",
+      "b": "라즈베리",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_카메라_힌지받침_추정",
+      "b": "P02_분리선반_150x130x4",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_카메라_앞걸림턱_추정",
+      "b": "P10_해치백덮개",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_카메라_앞걸림턱_추정",
+      "b": "라즈베리",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_카메라_앞걸림턱_추정",
+      "b": "P02_분리선반_150x130x4",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_카메라_뒤접이판_추정",
+      "b": "P10_해치백덮개",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_카메라_뒤접이판_추정",
+      "b": "라즈베리",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_카메라_뒤접이판_추정",
+      "b": "P02_분리선반_150x130x4",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_렌즈",
+      "b": "P10_해치백덮개",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_렌즈",
+      "b": "라즈베리",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_렌즈",
+      "b": "P02_분리선반_150x130x4",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_본체힌지_추정",
+      "b": "P10_해치백덮개",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_본체힌지_추정",
+      "b": "라즈베리",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_본체힌지_추정",
+      "b": "P02_분리선반_150x130x4",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_뒤접이힌지_추정",
+      "b": "P10_해치백덮개",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_뒤접이힌지_추정",
+      "b": "라즈베리",
+      "surface_pairs": 0
+    },
+    {
+      "a": "REF_뒤접이힌지_추정",
+      "b": "P02_분리선반_150x130x4",
+      "surface_pairs": 0
+    }
+  ],
+  "limitations": "estimated camera hinge positions; no motion sweep, clamping-force or actual assembly test"
+}

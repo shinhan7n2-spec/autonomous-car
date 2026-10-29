@@ -1,0 +1,32 @@
+{
+  "status": "cover appearance preview only; not print-ready",
+  "outer_mm": [
+    168,
+    156,
+    82
+  ],
+  "nominal_wall_mm": 3,
+  "mounts": "not designed",
+  "camera_body": "not included, front cutout provisional",
+  "curves": "illustrative wire routes hidden",
+  "nonmanifold_edges": 0,
+  "source_files_unchanged": {
+    "라즈베리.stl": true,
+    "리포배터리.stl": true,
+    "메카넘휠.stl": true,
+    "모터.stl": true,
+    "보조배터리.stl": true,
+    "캐스터 휠.stl": true
+  },
+  "reference_mesh_unchanged": {
+    "라즈베리": true,
+    "리포배터리": true,
+    "보조배터리": true,
+    "모터": true,
+    "Motor_Right": true,
+    "메카넘휠": true,
+    "Wheel_Right_REFERENCE_ONLY": true,
+    "캐스터 휠": true
+  },
+  "all_reference_scales_one": true
+}

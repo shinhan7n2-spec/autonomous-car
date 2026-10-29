@@ -1,0 +1,145 @@
+{
+  "status": "STL PACKAGE; NOT MACHINE GCODE; material and fit verification pending",
+  "original_STL_full_hash_unchanged": {
+    "라즈베리": true,
+    "리포배터리": true,
+    "보조배터리": true,
+    "모터": true,
+    "Motor_Right": true,
+    "메카넘휠": true,
+    "Wheel_Right_REFERENCE_ONLY": true,
+    "캐스터 휠": true
+  },
+  "assumptions": {
+    "mount_V_angle_deg": 90,
+    "V_apex_z_mm": 63.4,
+    "motor_nominal_diameter_mm": 22,
+    "U_mm": [
+      20,
+      46,
+      31.484130859375
+    ],
+    "plate_mm": [
+      20,
+      46,
+      4
+    ],
+    "M4_hole_mm": 5,
+    "M4_nut_slot_mm": [
+      8.2,
+      3.8
+    ],
+    "clamp_bolts": "M4x20 estimated; 2 upper + 2 lower per motor",
+    "fit": "V and flat plate proposed for nominal 22 mm motor; scan skew/shaft alignment not validated"
+  },
+  "parts": [
+    {
+      "file": "01_P01_한장바닥판_190x185x5.stl",
+      "object": "P01_한장바닥판_190x185x5",
+      "export_bbox_mm": [
+        190.0,
+        185.0,
+        45.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "02_P02_분리선반_150x130x4.stl",
+      "object": "P02_분리선반_150x130x4",
+      "export_bbox_mm": [
+        150.0,
+        130.0,
+        7.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "03_P04_보조배터리_고정가로대.stl",
+      "object": "P04_보조배터리_고정가로대",
+      "export_bbox_mm": [
+        88.0,
+        10.0,
+        3.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "04_P05_리포배터리_고정가로대.stl",
+      "object": "P05_리포배터리_고정가로대",
+      "export_bbox_mm": [
+        56.0,
+        10.0,
+        3.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "05_P06_L_U받침_V홈.stl",
+      "object": "P06_L_U받침_V홈",
+      "export_bbox_mm": [
+        31.484130859375,
+        46.0,
+        20.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "06_P06_R_U받침_V홈.stl",
+      "object": "P06_R_U받침_V홈",
+      "export_bbox_mm": [
+        31.484130859375,
+        46.0,
+        20.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "07_P07_L_평판.stl",
+      "object": "P07_L_평판",
+      "export_bbox_mm": [
+        20.0,
+        46.0,
+        4.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "08_P07_R_평판.stl",
+      "object": "P07_R_평판",
+      "export_bbox_mm": [
+        20.0,
+        46.0,
+        4.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "09_P09_카메라받침_추정.stl",
+      "object": "P09_카메라받침_추정",
+      "export_bbox_mm": [
+        60.0,
+        26.0,
+        4.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    }
+  ]
+}

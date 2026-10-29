@@ -1,0 +1,259 @@
+{
+  "status": "integrated design with estimated interfaces; not machine-ready",
+  "material": "PLA selected; machine cartridge unconfirmed",
+  "wifi": {
+    "model": "A1000mini internal antenna",
+    "shape_estimate_mm": [
+      24.6,
+      16,
+      8
+    ],
+    "reserved_protrusion_mm": 30,
+    "source": "https://www.kwshop.co.kr/goods/view?no=6540",
+    "exact_dimensions_verified": false,
+    "USB_port_position": "estimated from provided Pi envelope"
+  },
+  "camera": {
+    "estimate_mm": [
+      70,
+      34,
+      38
+    ],
+    "exact_dimensions_verified": false
+  },
+  "thermal": "roof/side vents and lower inlet; no added fan; no temperature simulation",
+  "radio": "opening around USB adapter; no RF test or signal-strength guarantee",
+  "cover_mount": "4 M3x16 bolts and M3 nuts proposed; nut AF6.06 cavity estimate",
+  "board_retention": "edge tabs around reference envelope; actual PCB component clearance pending",
+  "sensor_retention": "back strip only; attachment detail incomplete",
+  "source_hashes_unchanged": {
+    "라즈베리.stl": true,
+    "리포배터리.stl": true,
+    "메카넘휠.stl": true,
+    "모터.stl": true,
+    "보조배터리.stl": true,
+    "캐스터 휠.stl": true
+  },
+  "reference_geometry_unchanged": {
+    "라즈베리": true,
+    "리포배터리": true,
+    "보조배터리": true,
+    "모터": true,
+    "Motor_Right": true,
+    "메카넘휠": true,
+    "Wheel_Right_REFERENCE_ONLY": true,
+    "캐스터 휠": true
+  },
+  "scale_one": true,
+  "parts": [
+    {
+      "file": "P01_한장바닥판_190x185x5.stl",
+      "size_mm": [
+        190.0,
+        185.0,
+        45.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P02_분리선반_150x130x4.stl",
+      "size_mm": [
+        150.0,
+        130.0,
+        35.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P09_카메라받침_추정.stl",
+      "size_mm": [
+        60.0,
+        26.0,
+        4.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P04_보조배터리_고정가로대.stl",
+      "size_mm": [
+        88.0,
+        10.0,
+        3.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P05_리포배터리_고정가로대.stl",
+      "size_mm": [
+        56.0,
+        10.0,
+        3.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P06_L_U받침_V홈.stl",
+      "size_mm": [
+        31.484130859375,
+        46.0,
+        20.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P07_L_평판.stl",
+      "size_mm": [
+        20.0,
+        46.0,
+        4.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P06_R_U받침_V홈.stl",
+      "size_mm": [
+        31.484130859375,
+        46.0,
+        20.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P07_R_평판.stl",
+      "size_mm": [
+        20.0,
+        46.0,
+        4.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P10_해치백덮개.stl",
+      "size_mm": [
+        172.0,
+        183.0,
+        86.5158920288086
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P11_PI_脱落防止.stl",
+      "size_mm": [
+        18.0,
+        10.0,
+        3.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P11_PI_脱落防止.001.stl",
+      "size_mm": [
+        18.0,
+        10.0,
+        3.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P11_PI_脱落防止.002.stl",
+      "size_mm": [
+        18.0,
+        10.0,
+        3.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P11_PI_脱落防止.003.stl",
+      "size_mm": [
+        18.0,
+        10.0,
+        3.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P11_DRIVER_脱落防止.stl",
+      "size_mm": [
+        18.0,
+        10.0,
+        3.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P11_DRIVER_脱落防止.001.stl",
+      "size_mm": [
+        18.0,
+        10.0,
+        3.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P11_DRIVER_脱落防止.002.stl",
+      "size_mm": [
+        18.0,
+        10.0,
+        3.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P11_DRIVER_脱落防止.003.stl",
+      "size_mm": [
+        18.0,
+        10.0,
+        3.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    },
+    {
+      "file": "P12_센서뒤고정띠.stl",
+      "size_mm": [
+        56.0,
+        3.0,
+        6.0
+      ],
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "bed_fit": true
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "status": "reference placement only; no chassis; not print ready",
+  "units": "STL raw units interpreted as mm provisionally; wheel uniformly scaled to nominal 96mm radial envelope; caster uniformly scaled to nominal 62mm height; not a verified mesh calibration",
+  "axis": "X left/right; +Y front; +Z up",
+  "envelope_raw_mm_assumption": [
+    239.6114959716797,
+    292.8565673828125,
+    119.0
+  ],
+  "notes": [
+    "Wheel right duplicates left mesh; handedness not verified",
+    "Motor and caster orientation must be reviewed visually",
+    "Camera location is annotated on composed image only; no size invented",
+    "HY-SRF05 shown as known PCB surface only",
+    "L298N is an outer size box, not detailed geometry",
+    "All placement coordinates are proposed arrangement, not approved dimensions"
+  ]
+}

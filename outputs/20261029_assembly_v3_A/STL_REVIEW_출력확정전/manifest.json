@@ -1,0 +1,101 @@
+[
+  {
+    "file": "01_P01_한장바닥판_190x185x5_REVIEW.stl",
+    "object": "P01_한장바닥판_190x185x5",
+    "bbox_mm": [
+      190.0,
+      185.0,
+      45.0
+    ],
+    "status": "REVIEW ONLY - not cleared for printing",
+    "units": "mm; numeric STL coordinates unchanged, no automatic scale conversion"
+  },
+  {
+    "file": "02_P02_분리선반_150x130x4_REVIEW.stl",
+    "object": "P02_분리선반_150x130x4",
+    "bbox_mm": [
+      150.0,
+      130.0,
+      7.0
+    ],
+    "status": "REVIEW ONLY - not cleared for printing",
+    "units": "mm; numeric STL coordinates unchanged, no automatic scale conversion"
+  },
+  {
+    "file": "03_P04_보조배터리_고정가로대_REVIEW.stl",
+    "object": "P04_보조배터리_고정가로대",
+    "bbox_mm": [
+      88.0,
+      10.0,
+      3.0
+    ],
+    "status": "REVIEW ONLY - not cleared for printing",
+    "units": "mm; numeric STL coordinates unchanged, no automatic scale conversion"
+  },
+  {
+    "file": "04_P05_리포배터리_고정가로대_REVIEW.stl",
+    "object": "P05_리포배터리_고정가로대",
+    "bbox_mm": [
+      56.0,
+      10.0,
+      3.0
+    ],
+    "status": "REVIEW ONLY - not cleared for printing",
+    "units": "mm; numeric STL coordinates unchanged, no automatic scale conversion"
+  },
+  {
+    "file": "05_P06_모터상부_추정끼움_REVIEW.stl",
+    "object": "P06_모터상부_추정끼움",
+    "bbox_mm": [
+      20.0,
+      46.0,
+      25.96868896484375
+    ],
+    "status": "REVIEW ONLY - not cleared for printing",
+    "units": "mm; numeric STL coordinates unchanged, no automatic scale conversion"
+  },
+  {
+    "file": "06_P06_모터상부_추정끼움.001_REVIEW.stl",
+    "object": "P06_모터상부_추정끼움.001",
+    "bbox_mm": [
+      20.0,
+      46.0,
+      25.96868896484375
+    ],
+    "status": "REVIEW ONLY - not cleared for printing",
+    "units": "mm; numeric STL coordinates unchanged, no automatic scale conversion"
+  },
+  {
+    "file": "07_P07_모터하부_추정끼움_REVIEW.stl",
+    "object": "P07_모터하부_추정끼움",
+    "bbox_mm": [
+      20.0,
+      46.0,
+      19.0
+    ],
+    "status": "REVIEW ONLY - not cleared for printing",
+    "units": "mm; numeric STL coordinates unchanged, no automatic scale conversion"
+  },
+  {
+    "file": "08_P07_모터하부_추정끼움.001_REVIEW.stl",
+    "object": "P07_모터하부_추정끼움.001",
+    "bbox_mm": [
+      20.0,
+      46.0,
+      19.0
+    ],
+    "status": "REVIEW ONLY - not cleared for printing",
+    "units": "mm; numeric STL coordinates unchanged, no automatic scale conversion"
+  },
+  {
+    "file": "09_P09_카메라받침_추정_REVIEW.stl",
+    "object": "P09_카메라받침_추정",
+    "bbox_mm": [
+      60.0,
+      26.0,
+      4.0
+    ],
+    "status": "REVIEW ONLY - not cleared for printing",
+    "units": "mm; numeric STL coordinates unchanged, no automatic scale conversion"
+  }
+]

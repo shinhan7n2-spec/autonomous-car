@@ -1,0 +1,184 @@
+{
+  "scale_policy": "STL geometry unchanged; reference scales all 1; rotations/translations only",
+  "printer_mm": [
+    210,
+    200,
+    195
+  ],
+  "base_mm": [
+    190,
+    185,
+    5
+  ],
+  "single_vs_split": {
+    "single": "selected: no structural seam, lower part/fastener count; tighter servicing space",
+    "split": "312 mm reference layout needs two base pieces and joint; more routing room but joint stiffness/fastener access unverified"
+  },
+  "assumptions": {
+    "motor_mount_bore_mm": 29,
+    "motor_mount_width_mm": 20,
+    "caster_slot_centers_mm": [
+      38,
+      28
+    ],
+    "caster_slot_size_mm": [
+      14,
+      6
+    ],
+    "M4_clearance_mm": 5,
+    "M3_clearance_mm": 4,
+    "camera_slot_mm": [
+      17,
+      7
+    ],
+    "battery_top_gap_mm": 1,
+    "battery_bar_thickness_mm": 3,
+    "battery_nut_pocket_mm": [
+      6.2,
+      3
+    ],
+    "standoff_female_depth": "not assumed; bolt length pending",
+    "caster_sweep": "not verified, visible static envelope only",
+    "wheel_motor_fit": "shaft centers estimated from scan envelope; no coupler STL",
+    "battery_mass": "not known; no dynamic stability claim"
+  },
+  "reference_bounds": {
+    "라즈베리": [
+      [
+        -62.0,
+        -34.0,
+        113.484130859375
+      ],
+      [
+        -6.0,
+        54.0,
+        137.484130859375
+      ]
+    ],
+    "리포배터리": [
+      [
+        21.5,
+        -52.0,
+        79.484130859375
+      ],
+      [
+        58.5,
+        52.0,
+        104.484130859375
+      ]
+    ],
+    "보조배터리": [
+      [
+        -68.25,
+        -70.0,
+        79.484130859375
+      ],
+      [
+        0.25,
+        70.0,
+        95.984130859375
+      ]
+    ],
+    "모터": [
+      [
+        -86.98209381103516,
+        -59.648353576660156,
+        34.738800048828125
+      ],
+      [
+        -19.017906188964844,
+        -36.351646423339844,
+        62.29205322265625
+      ]
+    ],
+    "Motor_Right": [
+      [
+        19.017906188964844,
+        -59.648353576660156,
+        34.738800048828125
+      ],
+      [
+        86.98209381103516,
+        -36.351646423339844,
+        62.29205322265625
+      ]
+    ],
+    "메카넘휠": [
+      [
+        -141.297119140625,
+        -96.81877136230469,
+        -1.2806164022549638e-06
+      ],
+      [
+        -82.70291137695312,
+        0.8187675476074219,
+        97.0308837890625
+      ]
+    ],
+    "Wheel_Right_REFERENCE_ONLY": [
+      [
+        82.702880859375,
+        -96.81877136230469,
+        -1.2806164022549638e-06
+      ],
+      [
+        141.29708862304688,
+        0.8187675476074219,
+        97.0308837890625
+      ]
+    ],
+    "캐스터 휠": [
+      [
+        -29.303165435791016,
+        16.128196716308594,
+        0.0
+      ],
+      [
+        29.303165435791016,
+        93.87181091308594,
+        74.484130859375
+      ]
+    ],
+    "L298N_43x43x27_SPEC_ENVELOPE": [
+      [
+        16.5,
+        -46.5,
+        116.484130859375
+      ],
+      [
+        59.5,
+        -3.5,
+        143.484130859375
+      ]
+    ],
+    "HY_SRF05_PCB_45x21_NO_DEPTH": [
+      [
+        -22.5,
+        91.0,
+        82.484130859375
+      ],
+      [
+        22.5,
+        91.0,
+        103.484130859375
+      ]
+    ]
+  },
+  "checks": {
+    "all_STL_scales_1": true,
+    "reference_first_vertex_unchanged": true,
+    "overall_wheel_width_mm": 282.5942077636719,
+    "wheel_to_rear_plate_lateral_gap_mm": 2.702880859375,
+    "lipo_top_to_shelf_mm": 5.0,
+    "lipo_bar_top_to_shelf_mm": 1.0,
+    "ground_reference_wheels_caster_mm": [
+      -1.2806164022549638e-06,
+      0.0
+    ],
+    "bed_margin_per_side_mm": [
+      10.0,
+      7.5
+    ],
+    "mesh_collision_test": "not complete: conservative envelope checks only; joints and caster rotation require verification"
+  }
+}
