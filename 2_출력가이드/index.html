@@ -114,7 +114,7 @@ code{font:13px var(--mono);background:var(--panel);border:1px solid var(--line);
 </style>
 <div class="wrap">
 <header>
-  <p class="meta">신도리코 3DWOX 1 · PLA · 출력세트 v6.3</p>
+  <p class="meta">신도리코 3DWOX 2X (출력판 228×200) · PLA · 출력세트 v6.3</p>
   <h1>3D 출력 가이드</h1>
   <p class="lead">부품 10개를 파일 4개로 나눠 뽑습니다.</p>
   <div class="kpi">
@@ -123,60 +123,44 @@ code{font:13px var(--mono);background:var(--panel);border:1px solid var(--line);
     <div><b>약 36시간</b><span>전체 예상</span></div>
     <div><b>약 480g</b><span>필라멘트 (PLA)</span></div>
   </div>
+  <div style="border:1px solid var(--warn);border-radius:6px;padding:10px 14px;margin-top:16px;background:var(--panel)">
+    <b style="color:var(--warn)">수업 자료와 다른 점 (확인 필요)</b>
+    <ul class="short" style="margin-top:6px">
+      <li>자료: "나사 4mm면 구멍 5mm". 이 설계는 볼트를 출력물에 직접 박는 방식이라 구멍이 볼트보다 작음 (M4 → 3.4mm, M6 → 5mm). 너트를 쓰려면 구멍을 키워야 함</li>
+      <li>자료: 조립 부분은 1mm 넉넉하게. 이 설계의 핀 구멍은 0.5mm 여유 → 빡빡하면 드릴·사포로 넓히기</li>
+      <li>예약 시간은 평일 9~18시. 10시간 넘는 출력(출력2·4)은 담당 선생님께 확인</li>
+    </ul></div>
   <nav class="toc"><a href="#first">0 처음 따라 하기</a><a href="#where">1 파일 위치</a><a href="#set">2 설정</a><a href="#order">3 출력 순서</a><a href="#how">4 뽑는 방법</a><a href="#list">5 전체 목록</a><a href="#fail">6 실패할 때</a></nav>
 </header>
 
 <section class="sec" id="first">
-  <h2>0 처음 출력하기 (따라 하기)</h2>
-  <p class="lead">처음이면 이 순서대로 하면 됩니다. 출력1 파일로 예를 듭니다.</p>
-  <h3>프린터 준비</h3>
+  <h2>0 처음 출력하기 (수업 자료 순서)</h2>
+  <p class="lead">교수님 자료 「3D 프린터 모델링 및 제작」 p.36~52 순서입니다. 출력1 파일로 예를 듭니다.</p>
+  <h3>예약</h3>
   <ol class="steps2">
-    <li><div><b>필라멘트 확인</b><span>프린터 화면에서 PLA가 들어 있고 남은 양이 충분한지 봅니다 (전체 약 480g 필요).</span></div></li>
-    <li><div><b>출력판 비우고 닦기</b><span>지난 출력물·찌꺼기를 치우고 마른 천으로 닦습니다. 손기름이 있으면 잘 안 붙습니다.</span></div></li>
+    <li><div><b>장비 예약</b><span>전남대 계약학과 → 창의융합교육센터 → 장비활용 예약시스템 → 메이커스페이스B → <b>3DWOX 2X</b> 예약. 평일 9시~18시만 들어갈 수 있음.</span></div></li>
+    <li><div><b>시간 넉넉히</b><span>실제 시간은 프로그램 예상보다 길 수 있음. 출력2(약 10시간)·출력4(약 12시간)는 하루 안에 안 끝날 수 있어 <b>담당 선생님께 먼저 확인</b>.</span></div></li>
   </ol>
-  <h3>프로그램에서 (3DWOX Desktop)</h3>
-  <div class="mock"><svg viewBox="0 0 900 520" role="img" aria-label="3DWOX Desktop 화면 예시 그림: 왼쪽 도구, 가운데 출력판, 오른쪽 설정, 오른쪽 아래 출력 버튼">
-<rect x="0" y="0" width="900" height="520" rx="8" fill="var(--bg)" stroke="var(--line)"/>
-<rect x="0" y="0" width="900" height="36" rx="8" fill="var(--line)"/><text x="16" y="24" font-size="15" font-weight="700">3DWOX Desktop</text>
-<text x="708" y="24" font-size="13" fill="var(--muted)">예상 시간 · 필라멘트</text>
-<g><rect x="12" y="52" width="56" height="300" rx="6" fill="var(--panel)" stroke="var(--line)"/>
-<rect x="22" y="64" width="36" height="36" rx="5" fill="var(--b-bg)" stroke="var(--accent)"/><text x="40" y="88" font-size="12" text-anchor="middle">열기</text>
-<rect x="22" y="110" width="36" height="36" rx="5" fill="none" stroke="var(--line)"/><text x="40" y="134" font-size="12" text-anchor="middle">이동</text>
-<rect x="22" y="156" width="36" height="36" rx="5" fill="none" stroke="var(--line)"/><text x="40" y="180" font-size="12" text-anchor="middle">회전</text>
-<rect x="22" y="202" width="36" height="36" rx="5" fill="none" stroke="var(--line)"/><text x="40" y="226" font-size="12" text-anchor="middle">크기</text>
-<rect x="22" y="248" width="36" height="36" rx="5" fill="var(--b-bg)" stroke="var(--accent)"/><text x="40" y="272" font-size="12" text-anchor="middle">설정</text></g>
-<polygon points="190,420 560,420 640,250 270,250" fill="var(--panel)" stroke="var(--warn)" stroke-width="2"/>
-<rect x="330" y="300" width="150" height="60" fill="#8fbcd4" stroke="#23688a"/><rect x="350" y="280" width="20" height="20" fill="#8fbcd4" stroke="#23688a"/><rect x="440" y="280" width="20" height="20" fill="#8fbcd4" stroke="#23688a"/>
-<text x="405" y="455" font-size="13" text-anchor="middle" fill="var(--muted)">출력판 (210 × 200)</text>
-<rect x="660" y="52" width="228" height="360" rx="6" fill="var(--panel)" stroke="var(--line)"/>
-<text x="676" y="78" font-size="14" font-weight="700">설정</text>
-<g font-size="13"><text x="676" y="110">재료</text><text x="872" y="110" text-anchor="end" font-weight="700">PLA</text>
-<text x="676" y="140">층 높이</text><text x="872" y="140" text-anchor="end" font-weight="700">0.2 mm</text>
-<text x="676" y="170">채움</text><text x="872" y="170" text-anchor="end" font-weight="700">20 %</text>
-<text x="676" y="200">벽</text><text x="872" y="200" text-anchor="end" font-weight="700">1.6 mm</text>
-<text x="676" y="230">서포트</text><text x="872" y="230" text-anchor="end" font-weight="700">출력판에서만</text>
-<text x="676" y="260">바닥 접착</text><text x="872" y="260" text-anchor="end" font-weight="700">브림 / 없음</text></g>
-<rect x="676" y="290" width="196" height="30" rx="5" fill="none" stroke="var(--line)"/><text x="774" y="310" font-size="13" text-anchor="middle">적용</text>
-<rect x="700" y="440" width="188" height="56" rx="8" fill="var(--accent)"/><text x="794" y="474" font-size="17" font-weight="700" text-anchor="middle" fill="#fff">출력 (Print)</text>
-<g fill="var(--bad)" font-size="14" font-weight="700"><circle cx="90" cy="82" r="13"/><text x="90" y="87" text-anchor="middle" fill="#fff">1</text>
-<circle cx="90" cy="266" r="13"/><text x="90" y="271" text-anchor="middle" fill="#fff">2</text>
-<circle cx="648" cy="74" r="13"/><text x="648" y="79" text-anchor="middle" fill="#fff">3</text>
-<circle cx="680" cy="468" r="13"/><text x="680" y="473" text-anchor="middle" fill="#fff">4</text>
-<circle cx="688" cy="18" r="12"/><text x="688" y="23" text-anchor="middle" fill="#fff">5</text></g>
-</svg></div>
-<p class="note">빨간 번호 = 아래 단계의 ①~⑤. 예시 그림입니다. 버튼 이름과 자리는 프로그램 버전·언어에 따라 조금 다를 수 있습니다. 같은 뜻의 메뉴를 찾으면 됩니다.</p>
+  <h3>내 컴퓨터에서 (3DWOX Desktop)</h3>
   <ol class="steps2">
-    <li><div><b>① 파일 열기</b><span><code>1_출력파일_v6.3</code> 폴더의 <code>출력1_작은부품7개_한판.stl</code>을 창으로 끌어다 놓거나 열기 버튼으로 엽니다. 모델 색은 실제 필라멘트 색과 상관없습니다.</span></div></li>
-    <li><div><b>출력판 안에 있는지 보기</b><span>부품이 출력판 테두리 안에 있고 바닥에 붙어 있으면 됩니다. <b>회전·크기는 건드리지 않습니다</b> (이미 맞춰 둠).</span></div></li>
-    <li><div><b>② 설정 열기 → ③ 값 넣기</b><span>재료 PLA · 층 0.2mm · 채움 20% · 벽 1.6mm(4줄) · 서포트 <b>출력판에서만</b>(Touching Buildplate) · 바닥 접착은 출력1·3 <b>없음</b>, 출력2(P01) <b>브림 3mm</b>, 출력4(P10) <b>브림</b>. 다 넣고 적용.</span></div></li>
-    <li><div><b>④ 출력 버튼 → ⑤ 시간 확인</b><span>프로그램이 출력용 파일로 바꾼 뒤 예상 시간과 필라멘트 양을 보여 줍니다. 이 가이드의 시간과 크게 다르면 설정을 다시 봅니다.</span></div></li>
-    <li><div><b>프린터로 보내기</b><span>연결 방식(USB 케이블·와이파이·USB 메모리)에 따라 보냅니다. 학교 프린터는 담당 선생님께 어떤 방식인지 확인하세요.</span></div></li>
+    <li><div><b>설치</b><span>3dprinter.sindoh.com → 지원 → 다운로드에서 3DWOX Desktop 설치.</span></div></li>
+    <li><div><b>모드 → 고급 모드</b><span>설정을 다 보려면 고급 모드로.</span></div></li>
+    <li><div><b>설정 → 프린터 설정 → 3DWOX 2X 선택 → 확인</b><span>출력판 228×200mm.</span></div></li>
+    <li><div><b>파일 → 모델 불러오기</b><span><code>1_출력파일_v6.3</code>의 <code>출력1_작은부품7개_한판.stl</code>. 가운데가 아니면 모델 오른쪽 클릭 → <b>베드 가운데로 이동</b>.</span></div></li>
+    <li><div><b>회전하지 않기</b><span>방향은 이미 맞춰 둠. <b>분석 → 최적 출력 방향</b>은 누르지 않기 (부품 방향이 바뀜).</span></div></li>
+    <li><div><b>SETTINGS → 서포트</b><span>생성 위치 <b>모든 곳</b>, 구조 <b>지그재그</b> (자료 기본값). 채움 20%.</span></div></li>
+    <li><div><b>레이어 뷰어로 확인</b><span>하늘색 = 서포트 생기는 곳. 예상 시간도 여기서 봄.</span></div></li>
+    <li><div><b>카트리지 선택</b><span>오른쪽 위 표시에서 프린터에 들어 있는 카트리지 (1) 또는 (2) 고르기.</span></div></li>
+    <li><div><b>파일 → G-code 저장하기 → USB에 담기</b><span>파일 이름에 출력1~4 번호가 보이게.</span></div></li>
   </ol>
-  <h3>출력 중 · 끝난 뒤</h3>
+  <h3>프린터에서</h3>
   <ol class="steps2">
-    <li><div><b>첫 층 10분 지켜보기</b><span>선이 출력판에 납작하게 붙으면 성공. 들뜨거나 엉키면 멈추고 출력판을 닦은 뒤 다시.</span></div></li>
-    <li><div><b>다 식으면 떼기</b><span>출력판을 꺼내 살짝 휘면 떨어집니다. 뜨거울 때 떼면 부품이 휩니다.</span></div></li>
-    <li><div><b>서포트·브림 정리</b><span>손이나 니퍼로 떼고, 남은 자국은 칼·사포로 다듬습니다. 아래 확인표를 봅니다.</span></div></li>
+    <li><div><b>USB 꽂고 G-code 파일 선택 → 출력</b><span>"출력물 제거 확인"이 나오면 베드가 비었는지 보고 확인.</span></div></li>
+    <li><div><b>온도·필라멘트 확인</b><span>200~202℃가 되면 시작. 화면의 칸이 적으면 필라멘트가 얼마 없음.</span></div></li>
+    <li><div><b>첫 층 지켜보기</b><span>필라멘트가 베드에 붙어서 나오는지 확인. USB 챙기기.</span></div></li>
+    <li><div><b>끝나면 장갑 끼고 떼기</b><span>"출력물 제거"가 나오면 문 열고 파란 베드를 떼어(손잡이 아래쪽) <b>휘어서</b> 떼기. 너무 세게 하면 베드에 구멍. 오래 두면 잘 안 떨어짐. 베드 제자리 → 확인.</span></div></li>
+    <li><div><b>래프트·서포트 제거</b><span>바닥의 래프트와 서포트를 장갑 끼고 도구로 제거.</span></div></li>
+    <li><div><b>베드가 안 붙을 때</b><span>설정 → 베드 레벨링 → 안내대로 스크류 돌리기.</span></div></li>
   </ol>
 </section>
 
@@ -199,8 +183,8 @@ code{font:13px var(--mono);background:var(--panel);border:1px solid var(--line);
     <tr><td>층 높이</td><td class="n">0.2 mm</td><td>보통 품질</td></tr>
     <tr><td>채움(Infill)</td><td class="n">20 %</td><td>충분히 단단함</td></tr>
     <tr><td>벽(Shell)</td><td class="n">4줄 (1.6 mm)</td><td>볼트가 구멍에 직접 박힘</td></tr>
-    <tr><td>서포트</td><td><b>출력판에서만</b></td><td>부품 안쪽에 서포트 안 생기게</td></tr>
-    <tr><td>브림</td><td>P01 (3mm), P10</td><td>넓은 판·얇은 벽 모서리 들뜸 방지</td></tr>
+    <tr><td>서포트</td><td><b>모든 곳 · 지그재그</b></td><td>수업 자료 기본값. 레이어 뷰어로 확인</td></tr>
+    <tr><td>바닥 접착</td><td>기본(래프트) 그대로</td><td>자료에 따로 바꾸라는 말 없음. 들뜨면 브림</td></tr>
     <tr><td>크기</td><td class="n">100 %</td><td>볼트 구멍 크기가 맞아야 함</td></tr>
     </tbody></table></div>
 </section>
@@ -215,7 +199,17 @@ code{font:13px var(--mono);background:var(--panel);border:1px solid var(--line);
     <ul class="files"><li><b>출력1_작은부품7개_한판.stl</b></li></ul>
     <p style="font-size:13.5px;color:var(--muted)">P06 · P07 · P09 · P04 · P14 2개 · P15가 이미 한 판에 배치됨</p>
     <ul>
-      <li>파일 1개만 열면 됨 (198×158mm)</li>
+      <li><b>파일 1개만 열면 끝.</b> 7개가 이미 제자리에 놓여 있음 (199×179mm). 하나씩 넣거나 옮기지 않기</li>
+      <li>출력판을 앞에서 볼 때 배치:
+        <ul>
+          <li>맨 뒤 줄: <b>P04 가로대</b> (긴 막대, 가운데 꺾임)</li>
+          <li>그 앞: <b>P15 보드 뒤 막대</b> (긴 막대)</li>
+          <li>가운데 왼쪽: <b>P06 모터 받침</b> (U자, 가장 큼)</li>
+          <li>그 앞 왼쪽: <b>P07 모터 하판</b> (납작한 판)</li>
+          <li>맨 앞 왼쪽: <b>P14 잠금판 (보조배터리)</b> (얇은 판)</li>
+          <li>오른쪽 위: <b>P14 잠금판 (리포)</b> (작은 통)</li>
+          <li>오른쪽 가운데: <b>P09 카메라 받침</b> (옆으로 누운 판, 가장 높음 78mm)</li>
+        </ul></li>
       <li>P07은 눕혀서 (구멍이 위아래로). 브림 필요 없음</li>
       <li>P09 카메라 받침만 옆으로 누움. 핀 아래 서포트 조금</li>
       <li>뽑으면 모터를 받침에 끼워 보기</li>
@@ -228,8 +222,7 @@ code{font:13px var(--mono);background:var(--panel);border:1px solid var(--line);
     <ul class="files"><li><b>출력2_P01_바닥판.stl</b></li></ul>
     <ul>
       <li>출력판에 꽉 참 (190×185)</li>
-      <li>브림 3mm (더 넓으면 출력판을 넘음)</li>
-      <li>시작 전에 출력판 깨끗이</li>
+            <li>시작 전에 출력판 깨끗이</li>
       <li>첫 층이 잘 붙는지 10분 지켜보기</li>
       <li>기둥이 키 큼 (84mm). 흔들림 없나 보기</li>
     </ul></div></div>
@@ -249,7 +242,7 @@ code{font:13px var(--mono);background:var(--panel);border:1px solid var(--line);
     <ul class="files"><li><b>출력4_P10_덮개.stl</b></li></ul>
     <ul>
       <li>밤에 걸어 두기 좋음</li>
-      <li>브림 넣기 (크고 얇은 벽)</li>
+      <li>모서리가 들뜨면 브림 추가</li>
       <li>뒤집힌 모양 그대로 (지붕이 바닥)</li>
     </ul></div></div>
   <p class="meta">시간은 계산으로 낸 어림값입니다. 슬라이서가 보여 주는 시간이 정확합니다.</p>
@@ -258,7 +251,7 @@ code{font:13px var(--mono);background:var(--panel);border:1px solid var(--line);
 <section class="sec" id="how">
   <h2>4 뽑는 방법</h2>
   <ol class="short">
-    <li>3DWOX Desktop 열기</li>
+    <li>3DWOX Desktop 열기 → 고급 모드 → 프린터 3DWOX 2X</li>
     <li>출력 파일 1개 불러오기</li>
     <li>크기 100% 확인. 회전하지 않기</li>
     <li>2번 설정 넣기</li>
