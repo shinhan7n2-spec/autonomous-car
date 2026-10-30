@@ -101,6 +101,16 @@ code{font:13px var(--mono);background:var(--panel);border:1px solid var(--line);
 @media (max-width:680px){.run{grid-template-columns:1fr}}
 .files{font:12.5px var(--mono)}
 .th{width:120px;border-radius:4px}
+
+.mock{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px}
+.mock svg{width:100%;height:auto;display:block}
+.mock svg text{font-family:var(--sans);fill:var(--fg)}
+.steps2{list-style:none;counter-reset:k;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.steps2>li{counter-increment:k;display:grid;grid-template-columns:34px 1fr;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px 12px}
+.steps2>li::before{content:counter(k);width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;font:700 14px var(--mono);display:flex;align-items:center;justify-content:center}
+.steps2 b{display:block}
+.steps2 span{color:var(--muted);font-size:14px}
+.note{font-size:13px;color:var(--muted)}
 </style>
 <div class="wrap">
 <header>
@@ -113,8 +123,62 @@ code{font:13px var(--mono);background:var(--panel);border:1px solid var(--line);
     <div><b>약 36시간</b><span>전체 예상</span></div>
     <div><b>약 480g</b><span>필라멘트 (PLA)</span></div>
   </div>
-  <nav class="toc"><a href="#where">1 파일 위치</a><a href="#set">2 설정</a><a href="#order">3 출력 순서</a><a href="#how">4 뽑는 방법</a><a href="#list">5 전체 목록</a><a href="#fail">6 실패할 때</a></nav>
+  <nav class="toc"><a href="#first">0 처음 따라 하기</a><a href="#where">1 파일 위치</a><a href="#set">2 설정</a><a href="#order">3 출력 순서</a><a href="#how">4 뽑는 방법</a><a href="#list">5 전체 목록</a><a href="#fail">6 실패할 때</a></nav>
 </header>
+
+<section class="sec" id="first">
+  <h2>0 처음 출력하기 (따라 하기)</h2>
+  <p class="lead">처음이면 이 순서대로 하면 됩니다. 출력1 파일로 예를 듭니다.</p>
+  <h3>프린터 준비</h3>
+  <ol class="steps2">
+    <li><div><b>필라멘트 확인</b><span>프린터 화면에서 PLA가 들어 있고 남은 양이 충분한지 봅니다 (전체 약 480g 필요).</span></div></li>
+    <li><div><b>출력판 비우고 닦기</b><span>지난 출력물·찌꺼기를 치우고 마른 천으로 닦습니다. 손기름이 있으면 잘 안 붙습니다.</span></div></li>
+  </ol>
+  <h3>프로그램에서 (3DWOX Desktop)</h3>
+  <div class="mock"><svg viewBox="0 0 900 520" role="img" aria-label="3DWOX Desktop 화면 예시 그림: 왼쪽 도구, 가운데 출력판, 오른쪽 설정, 오른쪽 아래 출력 버튼">
+<rect x="0" y="0" width="900" height="520" rx="8" fill="var(--bg)" stroke="var(--line)"/>
+<rect x="0" y="0" width="900" height="36" rx="8" fill="var(--line)"/><text x="16" y="24" font-size="15" font-weight="700">3DWOX Desktop</text>
+<text x="708" y="24" font-size="13" fill="var(--muted)">예상 시간 · 필라멘트</text>
+<g><rect x="12" y="52" width="56" height="300" rx="6" fill="var(--panel)" stroke="var(--line)"/>
+<rect x="22" y="64" width="36" height="36" rx="5" fill="var(--b-bg)" stroke="var(--accent)"/><text x="40" y="88" font-size="12" text-anchor="middle">열기</text>
+<rect x="22" y="110" width="36" height="36" rx="5" fill="none" stroke="var(--line)"/><text x="40" y="134" font-size="12" text-anchor="middle">이동</text>
+<rect x="22" y="156" width="36" height="36" rx="5" fill="none" stroke="var(--line)"/><text x="40" y="180" font-size="12" text-anchor="middle">회전</text>
+<rect x="22" y="202" width="36" height="36" rx="5" fill="none" stroke="var(--line)"/><text x="40" y="226" font-size="12" text-anchor="middle">크기</text>
+<rect x="22" y="248" width="36" height="36" rx="5" fill="var(--b-bg)" stroke="var(--accent)"/><text x="40" y="272" font-size="12" text-anchor="middle">설정</text></g>
+<polygon points="190,420 560,420 640,250 270,250" fill="var(--panel)" stroke="var(--warn)" stroke-width="2"/>
+<rect x="330" y="300" width="150" height="60" fill="#8fbcd4" stroke="#23688a"/><rect x="350" y="280" width="20" height="20" fill="#8fbcd4" stroke="#23688a"/><rect x="440" y="280" width="20" height="20" fill="#8fbcd4" stroke="#23688a"/>
+<text x="405" y="455" font-size="13" text-anchor="middle" fill="var(--muted)">출력판 (210 × 200)</text>
+<rect x="660" y="52" width="228" height="360" rx="6" fill="var(--panel)" stroke="var(--line)"/>
+<text x="676" y="78" font-size="14" font-weight="700">설정</text>
+<g font-size="13"><text x="676" y="110">재료</text><text x="872" y="110" text-anchor="end" font-weight="700">PLA</text>
+<text x="676" y="140">층 높이</text><text x="872" y="140" text-anchor="end" font-weight="700">0.2 mm</text>
+<text x="676" y="170">채움</text><text x="872" y="170" text-anchor="end" font-weight="700">20 %</text>
+<text x="676" y="200">벽</text><text x="872" y="200" text-anchor="end" font-weight="700">1.6 mm</text>
+<text x="676" y="230">서포트</text><text x="872" y="230" text-anchor="end" font-weight="700">출력판에서만</text>
+<text x="676" y="260">바닥 접착</text><text x="872" y="260" text-anchor="end" font-weight="700">브림 / 없음</text></g>
+<rect x="676" y="290" width="196" height="30" rx="5" fill="none" stroke="var(--line)"/><text x="774" y="310" font-size="13" text-anchor="middle">적용</text>
+<rect x="700" y="440" width="188" height="56" rx="8" fill="var(--accent)"/><text x="794" y="474" font-size="17" font-weight="700" text-anchor="middle" fill="#fff">출력 (Print)</text>
+<g fill="var(--bad)" font-size="14" font-weight="700"><circle cx="90" cy="82" r="13"/><text x="90" y="87" text-anchor="middle" fill="#fff">1</text>
+<circle cx="90" cy="266" r="13"/><text x="90" y="271" text-anchor="middle" fill="#fff">2</text>
+<circle cx="648" cy="74" r="13"/><text x="648" y="79" text-anchor="middle" fill="#fff">3</text>
+<circle cx="680" cy="468" r="13"/><text x="680" y="473" text-anchor="middle" fill="#fff">4</text>
+<circle cx="688" cy="18" r="12"/><text x="688" y="23" text-anchor="middle" fill="#fff">5</text></g>
+</svg></div>
+<p class="note">빨간 번호 = 아래 단계의 ①~⑤. 예시 그림입니다. 버튼 이름과 자리는 프로그램 버전·언어에 따라 조금 다를 수 있습니다. 같은 뜻의 메뉴를 찾으면 됩니다.</p>
+  <ol class="steps2">
+    <li><div><b>① 파일 열기</b><span><code>1_출력파일_v6.3</code> 폴더의 <code>출력1_작은부품7개_한판.stl</code>을 창으로 끌어다 놓거나 열기 버튼으로 엽니다. 모델 색은 실제 필라멘트 색과 상관없습니다.</span></div></li>
+    <li><div><b>출력판 안에 있는지 보기</b><span>부품이 출력판 테두리 안에 있고 바닥에 붙어 있으면 됩니다. <b>회전·크기는 건드리지 않습니다</b> (이미 맞춰 둠).</span></div></li>
+    <li><div><b>② 설정 열기 → ③ 값 넣기</b><span>재료 PLA · 층 0.2mm · 채움 20% · 벽 1.6mm(4줄) · 서포트 <b>출력판에서만</b>(Touching Buildplate) · 바닥 접착은 출력1·3 <b>없음</b>, 출력2(P01) <b>브림 3mm</b>, 출력4(P10) <b>브림</b>. 다 넣고 적용.</span></div></li>
+    <li><div><b>④ 출력 버튼 → ⑤ 시간 확인</b><span>프로그램이 출력용 파일로 바꾼 뒤 예상 시간과 필라멘트 양을 보여 줍니다. 이 가이드의 시간과 크게 다르면 설정을 다시 봅니다.</span></div></li>
+    <li><div><b>프린터로 보내기</b><span>연결 방식(USB 케이블·와이파이·USB 메모리)에 따라 보냅니다. 학교 프린터는 담당 선생님께 어떤 방식인지 확인하세요.</span></div></li>
+  </ol>
+  <h3>출력 중 · 끝난 뒤</h3>
+  <ol class="steps2">
+    <li><div><b>첫 층 10분 지켜보기</b><span>선이 출력판에 납작하게 붙으면 성공. 들뜨거나 엉키면 멈추고 출력판을 닦은 뒤 다시.</span></div></li>
+    <li><div><b>다 식으면 떼기</b><span>출력판을 꺼내 살짝 휘면 떨어집니다. 뜨거울 때 떼면 부품이 휩니다.</span></div></li>
+    <li><div><b>서포트·브림 정리</b><span>손이나 니퍼로 떼고, 남은 자국은 칼·사포로 다듬습니다. 아래 확인표를 봅니다.</span></div></li>
+  </ol>
+</section>
 
 <section class="sec" id="where">
   <h2>1 파일 위치</h2>
@@ -136,7 +200,7 @@ code{font:13px var(--mono);background:var(--panel);border:1px solid var(--line);
     <tr><td>채움(Infill)</td><td class="n">20 %</td><td>충분히 단단함</td></tr>
     <tr><td>벽(Shell)</td><td class="n">4줄 (1.6 mm)</td><td>볼트가 구멍에 직접 박힘</td></tr>
     <tr><td>서포트</td><td><b>출력판에서만</b></td><td>부품 안쪽에 서포트 안 생기게</td></tr>
-    <tr><td>브림</td><td>P10만</td><td>크고 얇은 벽</td></tr>
+    <tr><td>브림</td><td>P01 (3mm), P10</td><td>넓은 판·얇은 벽 모서리 들뜸 방지</td></tr>
     <tr><td>크기</td><td class="n">100 %</td><td>볼트 구멍 크기가 맞아야 함</td></tr>
     </tbody></table></div>
 </section>
@@ -164,6 +228,7 @@ code{font:13px var(--mono);background:var(--panel);border:1px solid var(--line);
     <ul class="files"><li><b>출력2_P01_바닥판.stl</b></li></ul>
     <ul>
       <li>출력판에 꽉 참 (190×185)</li>
+      <li>브림 3mm (더 넓으면 출력판을 넘음)</li>
       <li>시작 전에 출력판 깨끗이</li>
       <li>첫 층이 잘 붙는지 10분 지켜보기</li>
       <li>기둥이 키 큼 (84mm). 흔들림 없나 보기</li>
