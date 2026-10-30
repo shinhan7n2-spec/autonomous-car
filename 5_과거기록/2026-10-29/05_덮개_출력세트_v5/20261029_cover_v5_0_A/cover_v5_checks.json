@@ -1,0 +1,25 @@
+{
+ "version": "v5.0",
+ "status": "design review; not machine-ready",
+ "mount": "4 printed pins into base holes, lift straight up, no tools",
+ "print": {
+  "orientation": "roof down on bed",
+  "dims_mm": [
+   175.0,
+   183.0,
+   86.7
+  ],
+  "bed_3dwox1": [
+   210,
+   200,
+   195
+  ],
+  "overhang_cm2_roof_down": 111.5,
+  "volume_cm3": 149.9
+ },
+ "non_manifold_edges": 0,
+ "static_contacts": [
+  "P01_한장바닥판_190x185x5"
+ ],
+ "lift_sweep_collisions": {}
+}

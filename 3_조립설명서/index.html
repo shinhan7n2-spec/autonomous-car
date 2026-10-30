@@ -1,0 +1,237 @@
+<title>자율주행차 제작 설명서</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: workshop manual — single reading column, figures beside steps, A/B parts colour-coded */
+:root{
+  --bg:#f5f7f8; --panel:#ffffff; --fg:#1b2429; --muted:#5b6a73; --line:#d5dde2;
+  --accent:#23688a; --a-part:#7a5a1c; --a-bg:#f6efe0; --b-part:#23688a; --b-bg:#e3f0f6;
+  --ok:#2c7a4b; --warn:#a86408; --bad:#b23b2e;
+  --sans:"IBM Plex Sans KR",system-ui,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12181b; --panel:#1a2226; --fg:#e3eaee; --muted:#9aaab3; --line:#2c383e;
+  --accent:#6bb3d6; --a-part:#e0bd77; --a-bg:#2b2416; --b-part:#6bb3d6; --b-bg:#16303c;
+  --ok:#62c48a; --warn:#e3a54a; --bad:#ef7a6c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12181b; --panel:#1a2226; --fg:#e3eaee; --muted:#9aaab3; --line:#2c383e;
+  --accent:#6bb3d6; --a-part:#e0bd77; --a-bg:#2b2416; --b-part:#6bb3d6; --b-bg:#16303c;
+  --ok:#62c48a; --warn:#e3a54a; --bad:#ef7a6c; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.7 var(--sans);margin:0}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+h1,h2,h3{text-wrap:balance;line-height:1.3;margin:0}
+h1{font-size:1.9rem;font-weight:700}
+h2{font-size:1.4rem;font-weight:700;padding-top:12px;border-top:2px solid var(--fg);margin-top:48px}
+h3{font-size:1.05rem;font-weight:700}
+p{margin:0;max-width:68ch}
+.sec{display:flex;flex-direction:column;gap:16px}
+.lead{color:var(--muted)}
+.meta{font:13px var(--mono);color:var(--muted)}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center;margin-top:12px}
+.hero img{border-radius:6px;border:1px solid var(--line)}
+@media (max-width:720px){.hero{grid-template-columns:1fr}}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+nav.toc a{font-size:13px;padding:4px 10px;border:1px solid var(--line);border-radius:20px;color:var(--fg);text-decoration:none;background:var(--panel)}
+nav.toc a:hover,nav.toc a:focus-visible{border-color:var(--accent);outline:none}
+.tag{display:inline-block;font:500 11px var(--mono);letter-spacing:.04em;padding:1px 7px;border-radius:3px;vertical-align:2px}
+.tag.a{color:var(--a-part);background:var(--a-bg)} .tag.b{color:var(--b-part);background:var(--b-bg)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.card img{aspect-ratio:4/3;object-fit:cover;width:100%;background:#fff}
+.card .b-img{object-fit:contain;background:#3a3f43}
+.card .t{padding:10px 12px;display:flex;flex-direction:column;gap:4px}
+.card .t p{font-size:13.5px;color:var(--muted)}
+.card .t b{font-size:14px}
+.part{display:grid;grid-template-columns:260px 1fr;gap:16px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px;min-width:0}
+.part img{border-radius:4px;background:#3a3f43;width:100%}
+.part ul{margin:6px 0 0;padding-left:18px} .part li{margin:2px 0}
+@media (max-width:640px){.part{grid-template-columns:1fr}}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:640px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:700;background:var(--bg);font-size:12.5px;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.n,th.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.st{font:500 12px var(--sans);padding:1px 8px;border-radius:10px;white-space:nowrap;border:1px solid currentColor}
+.st.ok{color:var(--ok)} .st.warn{color:var(--warn)} .st.bad{color:var(--bad)}
+ol.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+ol.steps>li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:12px}
+ol.steps>li::before{content:counter(s);font:700 1.1rem var(--mono);color:var(--accent);border:2px solid var(--accent);border-radius:50%;width:36px;height:36px;display:grid;place-items:center}
+.stepbody{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 14px;min-width:0}
+.stepbody.noimg{grid-template-columns:1fr}
+.stepbody img{border-radius:4px;background:#3a3f43}
+.stepbody ul{margin:6px 0 0;padding-left:18px}
+.bolt{font:500 12.5px var(--mono);background:var(--bg);border:1px solid var(--line);padding:0 6px;border-radius:3px;white-space:nowrap}
+@media (max-width:720px){.stepbody{grid-template-columns:1fr}}
+.note{border-left:3px solid var(--warn);padding:8px 12px;background:var(--panel);border-radius:0 6px 6px 0;font-size:14px}
+.note.bad{border-color:var(--bad)}
+figure{margin:0;display:flex;flex-direction:column;gap:6px}
+img.th{width:140px;max-width:none;border-radius:4px;display:block}
+ul.chk{margin:0;padding-left:16px} ul.chk li{margin:1px 0}
+ol.legend{margin:6px 0 0;padding-left:22px;font-size:13.5px}
+table.ptab{min-width:820px}
+.sb{display:flex;flex-direction:column;gap:6px;min-width:0}
+.sb h3{font-size:1.15rem}
+.sb p{font-size:15px;max-width:none}
+.sb p b{display:inline-block;min-width:44px;color:var(--muted);font-weight:500;font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:20px;padding:2px 10px 2px 2px;background:var(--bg);font-size:13px;vertical-align:middle}
+.chip img{width:34px;height:34px;object-fit:cover;border-radius:50%}
+figcaption{font-size:12.5px;color:var(--muted)}
+code{font:13px var(--mono);background:var(--bg);padding:0 4px;border-radius:3px;border:1px solid var(--line)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:640px){.two{grid-template-columns:1fr}}
+a{color:var(--accent)}
+</style>
+<style>details{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px 14px} summary{cursor:pointer;font-weight:700} .hero2{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center} @media (max-width:720px){.hero2{grid-template-columns:1fr}} ul.short{margin:0;padding-left:18px} ul.short li{margin:3px 0}</style>
+<div class="wrap">
+<header class="sec">
+  <p class="meta">설계 v6 · 2026-10-30 · 출력 마감 11월 10일(화)</p>
+  <h1>자율주행차 제작 설명서</h1>
+  <div class="hero2">
+    <img src="img/s6_h_full.jpg" alt="완성 모델">
+    <ul class="short">
+      <li>출력 부품 <b>10개</b>, 출력판 <b>4번</b></li>
+      <li>볼트는 <b>키트 것만</b></li>
+      <li>덮개는 볼트 1개 풀고 위로 들어 올림</li>
+      <li>배터리는 <b>공구 없이</b> 뒤로 빼기</li>
+    </ul>
+  </div>
+  <nav class="toc"><a href="#print">1 출력</a><a href="#bolt">2 볼트</a><a href="#build">3 조립</a><a href="#charge">4 충전</a><a href="#warn">5 주의</a><a href="#todo">6 확인할 것</a></nav>
+</header>
+
+<section class="sec" id="print">
+  <h2>1 출력</h2>
+  <ul class="short">
+    <li>파일: <code>1_출력파일_v6.3</code> 폴더의 <b>출력1~4</b> 4개</li>
+    <li>방향은 맞춰 둠. <b>슬라이서에 그대로 놓기</b></li>
+    <li>PLA · 층 0.2mm · 채움 20% · 벽 4줄 · 서포트 출력판에서만</li>
+  </ul>
+  <div class="tbl"><table style="min-width:440px">
+    <thead><tr><th>출력판 위 모습</th><th>부품</th><th>뽑은 뒤 확인</th></tr></thead>
+    <tbody><tr><td><img class="th" src="img/pr_p01.jpg" alt="P01 바닥판"></td><td><b>P01 바닥판</b></td><td>기둥 6개 곧게 섰나 · 핀 5개 온전한가</td></tr>
+<tr><td><img class="th" src="img/pr_p02.jpg" alt="P02 선반"></td><td><b>P02 선반</b></td><td>레일 위 턱 온전한가</td></tr>
+<tr><td><img class="th" src="img/pr_p10.jpg" alt="P10 덮개"></td><td><b>P10 덮개</b></td><td>벽에 구멍 없나</td></tr>
+<tr><td><img class="th" src="img/pr_p06.jpg" alt="P06 모터 받침"></td><td><b>P06 모터 받침</b></td><td>V홈 매끈한가</td></tr>
+<tr><td><img class="th" src="img/pr_p07.jpg" alt="P07 모터 하판"></td><td><b>P07 모터 하판</b></td><td>볼트 구멍 4개 뚫렸나</td></tr>
+<tr><td><img class="th" src="img/pr_p09.jpg" alt="P09 카메라 받침"></td><td><b>P09 카메라 받침</b></td><td>핀 2개 온전한가</td></tr>
+<tr><td><img class="th" src="img/pr_p04.jpg" alt="P04 가로대"></td><td><b>P04 가로대</b></td><td>핀 구멍 4개</td></tr>
+<tr><td><img class="th" src="img/pr_p14b.jpg" alt="P14 잠금판 (보조)"></td><td><b>P14 잠금판 (보조)</b></td><td>홈에 꽂아 보기</td></tr>
+<tr><td><img class="th" src="img/pr_p14l.jpg" alt="P14 잠금판 (리포)"></td><td><b>P14 잠금판 (리포)</b></td><td>홈에 꽂아 보기</td></tr>
+<tr><td><img class="th" src="img/pr_p15.jpg" alt="P15 보드 뒤 막대"></td><td><b>P15 보드 뒤 막대</b></td><td>홈에 꽂아 보기</td></tr>
+</tbody></table></div>
+  <h3>출력 순서</h3>
+  <ol class="short">
+    <li>작은 부품 한 판 (받침·하판·카메라 받침·가로대·잠금판·막대) → 끼움 시험</li>
+    <li>P01 바닥판 (출력판에 꽉 참, 모서리 들뜸 주의)</li>
+    <li>P02 선반</li>
+    <li>P10 덮개 (가장 오래 걸림)</li>
+  </ol>
+</section>
+
+<section class="sec" id="bolt">
+  <h2>2 볼트 (키트 것만)</h2>
+  <div class="tbl"><table style="min-width:400px">
+    <thead><tr><th>어디</th><th>볼트</th><th class="n">개수</th><th>팩</th></tr></thead>
+    <tbody>
+    <tr><td>캐스터</td><td><span class="bolt">M5×10</span> + 너트</td><td class="n">4</td><td>캐스터</td></tr>
+    <tr><td>바퀴</td><td><span class="bolt">M4×12</span>, <span class="bolt">M3×8</span></td><td class="n">2+2</td><td>바퀴</td></tr>
+    <tr><td>모터 받침·하판</td><td><span class="bolt">M4×20</span></td><td class="n">8</td><td>지지대</td></tr>
+    <tr><td>덮개 (선반도 같이)</td><td><span class="bolt">M6×20</span></td><td class="n">1</td><td>카메라</td></tr>
+    </tbody></table></div>
+  <ul class="short">
+    <li>너트 대신 <b>출력물 구멍에 직접 조여 넣기</b>. 처음엔 뻑뻑함, 너무 세게 조이지 않기</li>
+    <li>지지대(황동 기둥) 8개는 안 씀</li>
+  </ul>
+</section>
+
+<section class="sec" id="build">
+  <h2>3 조립</h2>
+  <p class="lead">주황 = 이번에 끼우는 부품 · 빨간 화살표 = 끼우는 방향</p>
+  <ol class="steps">
+<li><div class="stepbody noimg"><div class="sb"><h3>출력물 손질</h3><p class="do"><b>할 일</b> 서포트 떼기</p></div></div></li>
+<li><div class="stepbody"><figure><img src="img/s6_a01_motor.jpg" alt="모터 + 받침"></figure><div class="sb"><h3>모터 + 받침</h3><div class=chips><span class="chip"><img src="img/kit_motor.jpg" alt="">모터</span></div><p class="do"><b>할 일</b> 받침 뒤집고 모터 2개, 하판 덮기</p><p class="why"><b>이유</b> 모터 고정</p><p class="do"><b>볼트</b> <span class="bolt">M4×20 4개 (아래에서)</span></p></div></div></li>
+<li><div class="stepbody"><figure><img src="img/s6_a02_to_base.jpg" alt="받침 → 바닥판"></figure><div class="sb"><h3>받침 → 바닥판</h3><p class="do"><b>할 일</b> 바닥판 아래에 대고 위에서 조이기</p><p class="why"><b>이유</b> 바퀴 위치 고정</p><p class="do"><b>볼트</b> <span class="bolt">M4×20 4개 (위에서)</span></p></div></div></li>
+<li><div class="stepbody"><figure><img src="img/s6_a03_wheels.jpg" alt="바퀴"></figure><div class="sb"><h3>바퀴</h3><div class=chips><span class="chip"><img src="img/kit_wheel.jpg" alt="">메카넘휠</span></div><p class="do"><b>할 일</b> L 왼쪽, R 오른쪽</p><p class="why"><b>이유</b> 바꾸면 직진 안 됨</p><p class="do"><b>볼트</b> <span class="bolt">M3×8, M4×12</span></p></div></div></li>
+<li><div class="stepbody"><figure><img src="img/s6_a04b_caster_nuts.jpg" alt="캐스터 너트"></figure><div class="sb"><h3>캐스터 너트</h3><div class=chips><span class="chip"><img src="img/kit_bolts.jpg" alt="">M5 너트</span></div><p class="do"><b>할 일</b> 윗면 홈 4곳에 넣기</p><p class="why"><b>이유</b> 볼트가 조여지게</p></div></div></li>
+<li><div class="stepbody"><figure><img src="img/s6_a04_caster.jpg" alt="캐스터"></figure><div class="sb"><h3>캐스터</h3><div class=chips><span class="chip"><img src="img/kit_caster.jpg" alt="">캐스터</span></div><p class="do"><b>할 일</b> 아래에서 조이기</p><p class="why"><b>이유</b> 앞바퀴</p><p class="do"><b>볼트</b> <span class="bolt">M5×10 4개</span></p></div></div></li>
+<li><div class="stepbody"><figure><img src="img/s6_a05_batteries.jpg" alt="배터리"></figure><div class="sb"><h3>배터리</h3><div class=chips><span class="chip"><img src="img/kit_bank.jpg" alt="">보조배터리</span><span class="chip"><img src="img/kit_lipo.jpg" alt="">리포</span></div><p class="do"><b>할 일</b> 보조 왼쪽(단자 앞), 리포 오른쪽</p><p class="why"><b>이유</b> 무게 균형</p></div></div></li>
+<li><div class="stepbody"><figure><img src="img/s6_a06_bar.jpg" alt="가로대"></figure><div class="sb"><h3>가로대</h3><p class="do"><b>할 일</b> 핀 4개에 끼우기</p><p class="why"><b>이유</b> 배터리 들뜸 방지</p><p class="do"><b>볼트</b> <span class="bolt">없음</span></p></div></div></li>
+<li><div class="stepbody"><figure><img src="img/s6_a07_gates.jpg" alt="잠금판"></figure><div class="sb"><h3>잠금판</h3><p class="do"><b>할 일</b> 양 끝 홈에 위에서 꽂기</p><p class="why"><b>이유</b> 배터리 빠짐 방지</p><p class="do"><b>볼트</b> <span class="bolt">없음</span></p></div></div></li>
+<li><div class="stepbody"><figure><img src="img/s6_a08_sensor.jpg" alt="초음파 센서"></figure><div class="sb"><h3>초음파 센서</h3><div class=chips><span class="chip"><img src="img/kit_sensor.jpg" alt="">초음파 센서</span></div><p class="do"><b>할 일</b> 기둥 홈에 위에서 꽂기</p><p class="why"><b>이유</b> 앞 장애물 감지</p></div></div></li>
+<li><div class="stepbody"><figure><img src="img/s6_a09_shelf.jpg" alt="선반"></figure><div class="sb"><h3>선반</h3><p class="do"><b>할 일</b> 기둥 핀 3곳에 끼우기. 뒤 왼쪽 기둥은 구멍으로 통과</p><p class="why"><b>이유</b> 보드 올릴 2층</p><p class="do"><b>볼트</b> <span class="bolt">없음 (덮개 볼트가 같이 잡음)</span></p></div></div></li>
+<li><div class="stepbody"><figure><img src="img/s6_a10_boards.jpg" alt="파이·드라이버"></figure><div class="sb"><h3>파이·드라이버</h3><div class=chips><span class="chip"><img src="img/kit_pi.jpg" alt="">파이</span><span class="chip"><img src="img/kit_driver.jpg" alt="">드라이버</span></div><p class="do"><b>할 일</b> 레일에 뒤에서 밀어 넣기</p><p class="why"><b>이유</b> 주행 중 안 빠지게</p><p class="do"><b>볼트</b> <span class="bolt">없음</span></p></div></div></li>
+<li><div class="stepbody"><figure><img src="img/s6_a11_key.jpg" alt="뒤 막대"></figure><div class="sb"><h3>뒤 막대</h3><p class="do"><b>할 일</b> 보드 뒤 홈에 꽂기</p><p class="why"><b>이유</b> 보드 빠짐 방지</p><p class="do"><b>볼트</b> <span class="bolt">없음</span></p></div></div></li>
+<li><div class="stepbody noimg"><div class="sb"><h3>전선</h3><div class=chips><span class="chip"><img src="img/kit_usbc.jpg" alt="">USB to C 케이블</span></div><p class="do"><b>할 일</b> 수업 연결도대로</p><p class="do"><b>파이</b> 보조배터리 <b>바깥쪽 구멍</b> → 케이블 → 파이</p><p class="do"><b>모터</b> 리포 → 드라이버 → 모터</p><p class="do"><b>신호</b> 센서·드라이버 → 파이, GND끼리 연결</p></div></div></li>
+<li><div class="stepbody"><figure><img src="img/s6_a12_deck.jpg" alt="카메라 받침"></figure><div class="sb"><h3>카메라 받침</h3><p class="do"><b>할 일</b> 기둥 핀 + 선반 구멍에 끼우기</p><p class="why"><b>이유</b> 카메라 자리</p><p class="do"><b>볼트</b> <span class="bolt">없음</span></p></div></div></li>
+<li><div class="stepbody"><figure><img src="img/s6_a13_camera.jpg" alt="카메라"></figure><div class="sb"><h3>카메라</h3><div class=chips><span class="chip"><img src="img/kit_camera.jpg" alt="">카메라</span></div><p class="do"><b>할 일</b> 클립을 받침 위에 걸기. 뒤판은 받침 뒤에 기대기</p><p class="why"><b>이유</b> 모니터에 거는 것과 같음</p><p class="do"><b>볼트</b> <span class="bolt">없음</span></p></div></div></li>
+<li><div class="stepbody"><figure><img src="img/s6_a14_cover.jpg" alt="덮개"></figure><div class="sb"><h3>덮개</h3><p class="do"><b>할 일</b> 위에서 똑바로 (테두리 턱에). 뒤 왼쪽 구멍에 볼트</p><p class="why"><b>이유</b> 주행 중 안 들림</p><p class="do"><b>볼트</b> <span class="bolt">M6×20 1개</span></p></div></div></li>
+  </ol>
+</section>
+
+<section class="sec" id="charge">
+  <h2>4 충전</h2>
+  <div class="hero2">
+    <img src="img/s6_a07_gates.jpg" alt="잠금판">
+    <ol class="short">
+      <li>덮개 볼트 1개 풀고 들기</li>
+      <li>잠금판 위로 뽑기</li>
+      <li>배터리 뒤로 빼기</li>
+      <li><b>리포</b>: 보관팩 안에서 B6 충전기로 (3S, 2.2A 이하)</li>
+      <li><b>보조배터리</b>: 휴대폰 충전기로</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="warn">
+  <h2>5 주의</h2>
+  <ul class="short">
+    <li><b>도로 폭</b>: 차 폭 28.3cm, 도로 30cm. 한쪽 여유 8mm</li>
+    <li><b>처음엔 저속</b>: 메카넘휠이라 회전 때 뒤가 미끄러짐</li>
+    <li><b>출발은 천천히</b>: 0.3~0.5초에 걸쳐 속도 올리기</li>
+    <li><b>들 때는 바닥판을</b>: 덮개·선반은 볼트 1개로만 잡혀 있음</li>
+    <li><b>카메라 흔들림</b>: 주행 영상 확인</li>
+  </ul>
+</section>
+
+<section class="sec" id="todo">
+  <h2>6 확인할 것</h2>
+  <ul class="short">
+    <li>바퀴가 도로 선을 밟아도 되나 (선생님)</li>
+    <li>캐스터 구멍 간격 실측 (54×24mm 가정)</li>
+    <li>센서 원통 간격·지름 실측 (26·16mm 가정)</li>
+    <li>카메라 클립 위판 길이·뒤판 길이·폭 (사진으로 추정: 49 / 55 / 48mm)</li>
+    <li>카메라 클립 바닥에 나사 구멍 있나</li>
+    <li>슬라이서 출력 시간·필라멘트 양</li>
+  </ul>
+  <details><summary>구조 지도 (구멍·기둥마다 용도)</summary>
+  <div class="two">
+    <figure><img src="img/s6_m_p01.jpg" alt="바닥판 구조 지도"><figcaption>P01 바닥판 (위가 차 앞)</figcaption>
+      <ol class="legend"><li>앞 기둥: 센서 홈 + 카메라 받침 핀</li><li>선반 기둥 + 핀 (3곳)</li><li>캐스터 긴 구멍 + M5 너트 홈</li><li>모터 받침 볼트 구멍 (머리 홈)</li><li>덮개 테두리 턱</li><li>보조배터리 옆벽</li><li>리포 옆벽</li><li>배터리 앞 턱</li><li>배선 구멍 (좌우)</li><li>잠금판 홈 기둥</li><li>가로대 핀 (4곳)</li></ol></figure>
+    <figure><img src="img/s6_m_p02.jpg" alt="선반 구조 지도"><figcaption>P02 선반 (위가 차 앞)</figcaption>
+      <ol class="legend"><li>파이 레일 + 위 턱</li><li>드라이버 모서리 턱</li><li>앞 모서리 막이</li><li>뒤 막대 홈</li><li>기둥 핀 구멍 (3곳)</li><li>M6 볼트 구멍</li><li>카메라 받침 핀 구멍</li><li>배선 구멍</li></ol></figure>
+  </div></details>
+  <details><summary>문제 기록 (발견 → 조치 → 결과)</summary><div class="tbl"><table>
+    <thead><tr><th class="n">버전</th><th>발견한 문제</th><th>조치</th><th>결과</th></tr></thead>
+      <tbody>
+    <tr><td class="n">v6.3</td><td>덮개가 얹기만 해서 주행 중 들릴 수 있음. 실제 웹캠 클립은 위판이 길고 뒤판이 비스듬히 내려옴(사진)</td><td>기둥을 덮개 천장까지 올려 M6 1개로 덮개+선반 고정. 카메라 받침 뒤 틈 삭제, 덮개 천장 구멍 뒤로 넓힘</td><td><span class="st ok">해결</span> 간섭 0건, 볼트 풀면 들어 올림 걸림 0건</td></tr>
+    <tr><td class="n">v6</td><td>키트에 볼트가 부족할 수 있음. 덮개 핀이 부러지기 쉬움. 부품이 많음</td><td>키트 볼트만 사용(출력물에 직접 나사). 덮개 핀 → 테두리 턱. 지지대·고정편 → 출력 기둥·레일. 모터 받침·하판 좌우 일체</td><td><span class="st ok">해결</span> 20개 → 10개</td></tr>
+    <tr><td class="n">v5.3</td><td>배터리를 뺄 때마다 볼트 4개를 풀어야 함. 모터 볼트 머리가 배터리 밑에 깔림. 보조배터리가 덮개 뒤 다리에 걸림</td><td>잠금판을 홈에 꽂는 방식으로. 바닥판에 볼트 머리 홈. 덮개 다리 2mm 줄임</td><td><span class="st ok">해결</span> 빼는 길 간섭 0건</td></tr>
+    <tr><td class="n">v5.2</td><td>작은 출력 부품이 너무 많음 (21개)</td><td>가로대 2개를 1개로. 고정편 8개는 막대로 합치면 드라이버 단자·파이 핀을 덮고, 잠금판을 합치면 충전 때 볼트 4개를 풀어야 해서 유지</td><td><span class="st ok">해결</span> 20개</td></tr>
+    <tr><td class="n">v5.2</td><td>선반 뒤쪽 지지대 구멍이 판 끝에서 1mm라 뒤가 트인 U자 홈이 됨. 선반이 뒤로 밀릴 수 있음</td><td>구멍 주변에 판을 덧대 막힌 구멍으로</td><td><span class="st ok">해결</span></td></tr>
+    <tr><td class="n">v5.2</td><td>예전 버전 흔적: 옛 센서 받침 턱·가이드, 옮기기 전 지지대 구멍 2곳, 가려진 케이블 타이 구멍, 옛 캐스터 구멍 끝</td><td>삭제하거나 메움. 남긴 구조는 모두 구조 지도에 용도를 적음</td><td><span class="st ok">해결</span></td></tr>
+    <tr><td class="n">v5.2</td><td>선반 아래 보강대 때문에 판 전체가 공중에 떠서 출력됨 (서포트 179cm²)</td><td>보강대 제거. 실린 무게가 약 200g이라 4mm 판으로 충분</td><td><span class="st ok">해결</span> 서포트 2cm²</td></tr>
+    <tr><td class="n">v5.2</td><td>STL이 조립 방향이라 슬라이서에서 직접 돌려야 함</td><td>모든 부품을 출력 방향으로 돌려 다시 저장</td><td><span class="st ok">해결</span></td></tr>
+    <tr><td class="n">v5.2</td><td>캐스터 구멍 38×28mm가 추정값이었고 실제(스캔 54×24mm)와 다름. M5×10이 너트까지 닿지 않음</td><td>예전 구멍을 메우고 54×24mm 긴 구멍을 냄. 윗면에 M5 너트 홈(4mm)</td><td><span class="st warn">실측 필요</span> 스캔 오차 ±1.5mm</td></tr>
+    <tr><td class="n">v5.1</td><td>보조배터리 USB-A 앞에서 덮개 벽까지 약 2cm라 파이 전원 플러그가 안 들어감</td><td>덮개 앞 왼쪽에 바닥부터 트인 창</td><td><span class="st ok">해결</span> 플러그 간섭 0건</td></tr>
+    <tr><td class="n">v5.0</td><td>덮개 출력이 어려움(서포트 131cm²), 충전할 때 불편, 차 모양이 안 남</td><td>지붕이 평평한 들어 올림 덮개로 교체. 핀 4개, 볼트 없음</td><td><span class="st ok">해결</span> 서포트 8cm², 들어 올림 간섭 0건</td></tr>
+    <tr><td class="n">v5.0</td><td>v4.3 덮개의 센서 홈이 위로 트여 있어, 덮개를 위아래로 움직이면 센서에 걸림</td><td>앞면 가운데를 아래부터 위까지 트임</td><td><span class="st ok">해결</span></td></tr>
+    <tr><td class="n">v4.3</td><td>센서 기판이 덮개 앞벽 안에 묻혀 있음</td><td>앞 기둥에 센서 홈, 덮개에 센서 자리. 카메라 받침 6mm 올림</td><td><span class="st ok">해결</span> 송수신 경로 막힘 없음</td></tr>
+    <tr><td class="n">v4.3</td><td>센서 핀 방향이 불확실</td><td>지급 부품 사진으로 확인</td><td><span class="st ok">확인</span> 긴 모서리에서 곧게 나옴</td></tr>
+    </tbody></table></div>
+</details>
+</section>
+</div>

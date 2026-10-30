@@ -1,0 +1,239 @@
+<title>3D 출력 가이드</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: workshop manual — single reading column, figures beside steps, A/B parts colour-coded */
+:root{
+  --bg:#f5f7f8; --panel:#ffffff; --fg:#1b2429; --muted:#5b6a73; --line:#d5dde2;
+  --accent:#23688a; --a-part:#7a5a1c; --a-bg:#f6efe0; --b-part:#23688a; --b-bg:#e3f0f6;
+  --ok:#2c7a4b; --warn:#a86408; --bad:#b23b2e;
+  --sans:"IBM Plex Sans KR",system-ui,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12181b; --panel:#1a2226; --fg:#e3eaee; --muted:#9aaab3; --line:#2c383e;
+  --accent:#6bb3d6; --a-part:#e0bd77; --a-bg:#2b2416; --b-part:#6bb3d6; --b-bg:#16303c;
+  --ok:#62c48a; --warn:#e3a54a; --bad:#ef7a6c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12181b; --panel:#1a2226; --fg:#e3eaee; --muted:#9aaab3; --line:#2c383e;
+  --accent:#6bb3d6; --a-part:#e0bd77; --a-bg:#2b2416; --b-part:#6bb3d6; --b-bg:#16303c;
+  --ok:#62c48a; --warn:#e3a54a; --bad:#ef7a6c; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.7 var(--sans);margin:0}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+h1,h2,h3{text-wrap:balance;line-height:1.3;margin:0}
+h1{font-size:1.9rem;font-weight:700}
+h2{font-size:1.4rem;font-weight:700;padding-top:12px;border-top:2px solid var(--fg);margin-top:48px}
+h3{font-size:1.05rem;font-weight:700}
+p{margin:0;max-width:68ch}
+.sec{display:flex;flex-direction:column;gap:16px}
+.lead{color:var(--muted)}
+.meta{font:13px var(--mono);color:var(--muted)}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center;margin-top:12px}
+.hero img{border-radius:6px;border:1px solid var(--line)}
+@media (max-width:720px){.hero{grid-template-columns:1fr}}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+nav.toc a{font-size:13px;padding:4px 10px;border:1px solid var(--line);border-radius:20px;color:var(--fg);text-decoration:none;background:var(--panel)}
+nav.toc a:hover,nav.toc a:focus-visible{border-color:var(--accent);outline:none}
+.tag{display:inline-block;font:500 11px var(--mono);letter-spacing:.04em;padding:1px 7px;border-radius:3px;vertical-align:2px}
+.tag.a{color:var(--a-part);background:var(--a-bg)} .tag.b{color:var(--b-part);background:var(--b-bg)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.card img{aspect-ratio:4/3;object-fit:cover;width:100%;background:#fff}
+.card .b-img{object-fit:contain;background:#3a3f43}
+.card .t{padding:10px 12px;display:flex;flex-direction:column;gap:4px}
+.card .t p{font-size:13.5px;color:var(--muted)}
+.card .t b{font-size:14px}
+.part{display:grid;grid-template-columns:260px 1fr;gap:16px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px;min-width:0}
+.part img{border-radius:4px;background:#3a3f43;width:100%}
+.part ul{margin:6px 0 0;padding-left:18px} .part li{margin:2px 0}
+@media (max-width:640px){.part{grid-template-columns:1fr}}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:640px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:700;background:var(--bg);font-size:12.5px;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.n,th.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.st{font:500 12px var(--sans);padding:1px 8px;border-radius:10px;white-space:nowrap;border:1px solid currentColor}
+.st.ok{color:var(--ok)} .st.warn{color:var(--warn)} .st.bad{color:var(--bad)}
+ol.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+ol.steps>li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:12px}
+ol.steps>li::before{content:counter(s);font:700 1.1rem var(--mono);color:var(--accent);border:2px solid var(--accent);border-radius:50%;width:36px;height:36px;display:grid;place-items:center}
+.stepbody{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 14px;min-width:0}
+.stepbody.noimg{grid-template-columns:1fr}
+.stepbody img{border-radius:4px;background:#3a3f43}
+.stepbody ul{margin:6px 0 0;padding-left:18px}
+.bolt{font:500 12.5px var(--mono);background:var(--bg);border:1px solid var(--line);padding:0 6px;border-radius:3px;white-space:nowrap}
+@media (max-width:720px){.stepbody{grid-template-columns:1fr}}
+.note{border-left:3px solid var(--warn);padding:8px 12px;background:var(--panel);border-radius:0 6px 6px 0;font-size:14px}
+.note.bad{border-color:var(--bad)}
+figure{margin:0;display:flex;flex-direction:column;gap:6px}
+img.th{width:140px;max-width:none;border-radius:4px;display:block}
+ul.chk{margin:0;padding-left:16px} ul.chk li{margin:1px 0}
+ol.legend{margin:6px 0 0;padding-left:22px;font-size:13.5px}
+table.ptab{min-width:820px}
+.sb{display:flex;flex-direction:column;gap:6px;min-width:0}
+.sb h3{font-size:1.15rem}
+.sb p{font-size:15px;max-width:none}
+.sb p b{display:inline-block;min-width:44px;color:var(--muted);font-weight:500;font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:20px;padding:2px 10px 2px 2px;background:var(--bg);font-size:13px;vertical-align:middle}
+.chip img{width:34px;height:34px;object-fit:cover;border-radius:50%}
+figcaption{font-size:12.5px;color:var(--muted)}
+code{font:13px var(--mono);background:var(--bg);padding:0 4px;border-radius:3px;border:1px solid var(--line)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:640px){.two{grid-template-columns:1fr}}
+a{color:var(--accent)}
+</style>
+<style>
+.short{margin:0;padding-left:20px} .short li{margin:3px 0}
+code{font:13px var(--mono);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:0 5px;word-break:break-all}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:16px}
+.kpi div{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.kpi b{display:block;font:700 1.5rem var(--sans);font-variant-numeric:tabular-nums}
+.kpi span{font-size:13px;color:var(--muted)}
+.run{display:grid;grid-template-columns:300px 1fr;gap:16px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px;min-width:0}
+.run img{width:100%;border-radius:4px;border:1px solid var(--line)}
+.run h3 .n{font:700 13px var(--mono);color:#fff;background:var(--accent);border-radius:12px;padding:1px 9px;margin-right:6px;vertical-align:2px}
+.run .time{font:700 1.05rem var(--sans);color:var(--accent)}
+.run ul{margin:6px 0 0;padding-left:18px}
+@media (max-width:680px){.run{grid-template-columns:1fr}}
+.files{font:12.5px var(--mono)}
+.th{width:120px;border-radius:4px}
+</style>
+<div class="wrap">
+<header>
+  <p class="meta">신도리코 3DWOX 1 · PLA · 출력세트 v6.3</p>
+  <h1>3D 출력 가이드</h1>
+  <p class="lead">부품 10개를 파일 4개로 나눠 뽑습니다.</p>
+  <div class="kpi">
+    <div><b>10개</b><span>출력 부품</span></div>
+    <div><b>4번</b><span>출력 횟수</span></div>
+    <div><b>약 36시간</b><span>전체 예상</span></div>
+    <div><b>약 480g</b><span>필라멘트 (PLA)</span></div>
+  </div>
+  <nav class="toc"><a href="#where">1 파일 위치</a><a href="#set">2 설정</a><a href="#order">3 출력 순서</a><a href="#how">4 뽑는 방법</a><a href="#list">5 전체 목록</a><a href="#fail">6 실패할 때</a></nav>
+</header>
+
+<section class="sec" id="where">
+  <h2>1 파일 위치</h2>
+  <ul class="short">
+    <li>PC 폴더: <code>Documents\Codex\autonomous-car\1_출력파일_v6.3</code></li>
+    <li><b>출력1~4 파일 4개만 순서대로 뽑으면 끝</b></li>
+    <li>부품 하나만 다시 뽑을 때: <code>개별부품_다시뽑을때</code> 폴더</li>
+    <li>방향은 이미 맞춰 둠. <b>돌리지 말고 그대로</b></li>
+  </ul>
+</section>
+
+<section class="sec" id="set">
+  <h2>2 공통 설정</h2>
+  <div class="tbl"><table style="min-width:420px">
+    <thead><tr><th>항목</th><th>값</th><th>이유</th></tr></thead>
+    <tbody>
+    <tr><td>재료</td><td><b>PLA</b></td><td>잘 안 휨</td></tr>
+    <tr><td>층 높이</td><td class="n">0.2 mm</td><td>보통 품질</td></tr>
+    <tr><td>채움(Infill)</td><td class="n">20 %</td><td>충분히 단단함</td></tr>
+    <tr><td>벽(Shell)</td><td class="n">4줄 (1.6 mm)</td><td>볼트가 구멍에 직접 박힘</td></tr>
+    <tr><td>서포트</td><td><b>출력판에서만</b></td><td>부품 안쪽에 서포트 안 생기게</td></tr>
+    <tr><td>브림</td><td>P10만</td><td>크고 얇은 벽</td></tr>
+    <tr><td>크기</td><td class="n">100 %</td><td>볼트 구멍 크기가 맞아야 함</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="sec" id="order">
+  <h2>3 출력 순서</h2>
+  <p class="lead">작은 부품부터 뽑아서 먼저 끼워 봅니다.</p>
+
+  <div class="run"><img src="img/pr_plate.jpg" alt="작은 부품 7개를 한 판에 놓은 모습"><div>
+    <h3><span class="n">1</span>작은 부품 한 판</h3>
+    <p class="time">약 9시간</p>
+    <ul class="files"><li><b>출력1_작은부품7개_한판.stl</b></li></ul>
+    <p style="font-size:13.5px;color:var(--muted)">P06 · P07 · P09 · P04 · P14 2개 · P15가 이미 한 판에 배치됨</p>
+    <ul>
+      <li>파일 1개만 열면 됨 (198×158mm)</li>
+      <li>P07은 눕혀서 (구멍이 위아래로). 브림 필요 없음</li>
+      <li>P09 카메라 받침만 옆으로 누움. 핀 아래 서포트 조금</li>
+      <li>뽑으면 모터를 받침에 끼워 보기</li>
+      <li>잘 안 되면 여기서 멈추고 알려 주기</li>
+    </ul></div></div>
+
+  <div class="run"><img src="img/pr_p01.jpg" alt="P01 바닥판 출력 모습"><div>
+    <h3><span class="n">2</span>P01 바닥판</h3>
+    <p class="time">약 9시간 40분</p>
+    <ul class="files"><li><b>출력2_P01_바닥판.stl</b></li></ul>
+    <ul>
+      <li>출력판에 꽉 참 (190×185)</li>
+      <li>시작 전에 출력판 깨끗이</li>
+      <li>첫 층이 잘 붙는지 10분 지켜보기</li>
+      <li>기둥이 키 큼 (84mm). 흔들림 없나 보기</li>
+    </ul></div></div>
+
+  <div class="run"><img src="img/pr_p02.jpg" alt="P02 선반 출력 모습"><div>
+    <h3><span class="n">3</span>P02 선반</h3>
+    <p class="time">약 5시간 20분</p>
+    <ul class="files"><li><b>출력3_P02_선반.stl</b></li></ul>
+    <ul>
+      <li>레일 위 턱 밑에 서포트 조금</li>
+      <li>뽑은 뒤 서포트 깨끗이 떼기</li>
+    </ul></div></div>
+
+  <div class="run"><img src="img/pr_p10.jpg" alt="P10 덮개 출력 모습"><div>
+    <h3><span class="n">4</span>P10 덮개</h3>
+    <p class="time">약 12시간 (가장 김)</p>
+    <ul class="files"><li><b>출력4_P10_덮개.stl</b></li></ul>
+    <ul>
+      <li>밤에 걸어 두기 좋음</li>
+      <li>브림 넣기 (크고 얇은 벽)</li>
+      <li>뒤집힌 모양 그대로 (지붕이 바닥)</li>
+    </ul></div></div>
+  <p class="meta">시간은 계산으로 낸 어림값입니다. 슬라이서가 보여 주는 시간이 정확합니다.</p>
+</section>
+
+<section class="sec" id="how">
+  <h2>4 뽑는 방법</h2>
+  <ol class="short">
+    <li>3DWOX Desktop 열기</li>
+    <li>출력 파일 1개 불러오기</li>
+    <li>크기 100% 확인. 회전하지 않기</li>
+    <li>2번 설정 넣기</li>
+    <li>슬라이스 → 예상 시간·필라멘트 확인</li>
+    <li>출력판 닦고 출력 시작</li>
+    <li>첫 층 10분 지켜보기</li>
+    <li>다 식은 뒤 떼기 (뜨거울 때 떼면 휨)</li>
+    <li>서포트·브림 떼고 확인표 보기</li>
+  </ol>
+</section>
+
+<section class="sec" id="list">
+  <h2>5 전체 목록</h2>
+  <p class="lead">한 부품만 다시 뽑을 때 쓰는 파일입니다 (<code>개별부품_다시뽑을때</code>).</p>
+  <div class="tbl"><table>
+    <thead><tr><th>출력 모습</th><th>파일 이름</th><th class="n">크기 (mm)</th><th class="n">시간</th><th class="n">무게</th><th>뽑은 뒤 확인</th></tr></thead>
+    <tbody>
+<tr><td><img class="th" src="img/pr_p01.jpg" alt="P01 출력 모습"></td><td class="files">P01_한장바닥판_190x185x5.stl</td><td class="n">190×185×84</td><td class="n">9시간 40분</td><td class="n">132 g</td><td>기둥 곧게 섰나 · 핀 온전한가</td></tr>
+<tr><td><img class="th" src="img/pr_p02.jpg" alt="P02 출력 모습"></td><td class="files">P02_분리선반_150x130x4.stl</td><td class="n">159×138×30</td><td class="n">5시간 20분</td><td class="n">72 g</td><td>레일 위 턱 온전한가</td></tr>
+<tr><td><img class="th" src="img/pr_p10.jpg" alt="P10 출력 모습"></td><td class="files">P10_들어올림덮개_v5_1.stl</td><td class="n">175×183×82</td><td class="n">12시간 </td><td class="n">164 g</td><td>벽에 구멍 없나 · 볼트 구멍 뚫렸나</td></tr>
+<tr><td><img class="th" src="img/pr_p06.jpg" alt="P06 출력 모습"></td><td class="files">P06_모터받침_일체.stl</td><td class="n">126×54×32</td><td class="n">3시간 </td><td class="n">40 g</td><td>V홈 매끈한가</td></tr>
+<tr><td><img class="th" src="img/pr_p07.jpg" alt="P07 출력 모습"></td><td class="files">P07_모터하판_일체.stl</td><td class="n">126×54×8</td><td class="n">1시간 40분</td><td class="n">23 g</td><td>볼트 구멍 4개 뚫렸나</td></tr>
+<tr><td><img class="th" src="img/pr_p09.jpg" alt="P09 출력 모습"></td><td class="files">P09_카메라_받침_일체.stl</td><td class="n">67×30×78</td><td class="n">2시간 20분</td><td class="n">26 g</td><td>핀 2개 온전한가</td></tr>
+<tr><td><img class="th" src="img/pr_p04.jpg" alt="P04 출력 모습"></td><td class="files">P04_배터리_고정가로대_일체.stl</td><td class="n">146×12×10</td><td class="n">30분</td><td class="n">6 g</td><td>핀 구멍 4개</td></tr>
+<tr><td><img class="th" src="img/pr_p14b.jpg" alt="P14 출력 모습"></td><td class="files">P14_BANK_뒤잠금판.stl</td><td class="n">88×20×4</td><td class="n">20분</td><td class="n">5 g</td><td>홈에 꽂아 보기</td></tr>
+<tr><td><img class="th" src="img/pr_p14l.jpg" alt="P14 출력 모습"></td><td class="files">P14_LIPO_뒤잠금판.stl</td><td class="n">56×28×18</td><td class="n">30분</td><td class="n">6 g</td><td>홈에 꽂아 보기</td></tr>
+<tr><td><img class="th" src="img/pr_p15.jpg" alt="P15 출력 모습"></td><td class="files">P15_보드_뒤막대.stl</td><td class="n">130×15×12</td><td class="n">30분</td><td class="n">6 g</td><td>홈에 꽂아 보기</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="sec" id="fail">
+  <h2>6 실패할 때</h2>
+  <div class="tbl"><table style="min-width:420px">
+    <thead><tr><th>증상</th><th>해결</th></tr></thead>
+    <tbody>
+    <tr><td>모서리가 들뜸</td><td>출력판 닦기 · 브림 넣기 · 문 닫고 출력</td></tr>
+    <tr><td>첫 층이 안 붙음</td><td>출력판 높이 맞추기(캘리브레이션) 후 다시</td></tr>
+    <tr><td>볼트 구멍이 빡빡함</td><td>볼트를 천천히 돌려 넣기. 너무 세면 드릴 Ø3.5(M4)·Ø5(M6)</td></tr>
+    <tr><td>핀이 안 들어감</td><td>핀 겉을 사포로 살짝</td></tr>
+    <tr><td>핀·기둥이 부러짐</td><td>그 부품만 다시 출력. 기록 남기기</td></tr>
+    </tbody></table></div>
+</section>
+</div>

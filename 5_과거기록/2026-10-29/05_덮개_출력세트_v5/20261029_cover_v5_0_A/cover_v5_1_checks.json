@@ -1,0 +1,16 @@
+{
+ "version": "v5.1",
+ "power_bank_ports": "front end (y=+70), from scan: USB-A x-59..-47 and x-41..-29, small input x~-10, z87..91",
+ "pi_power_use_port": "outer USB-A (x-59..-47); inner one is 1mm from the left pillar",
+ "plug_collisions": {
+  "REF_USB_A_플러그+케이블굽힘_추정": [],
+  "REF_충전입력_플러그_추정": [
+   "REF_HY_SRF05_핀+듀폰_아래방향_추정"
+  ]
+ },
+ "lift_sweep_collisions": {},
+ "non_manifold_edges": 0,
+ "static_contacts": [
+  "P01_한장바닥판_190x185x5"
+ ]
+}

@@ -1,0 +1,212 @@
+{
+ "P01_한장바닥판_190x185x5": {
+  "orient": "as_modeled",
+  "overhang_cm2": 4.2,
+  "dims": [
+   190,
+   185,
+   55
+  ],
+  "fits": true
+ },
+ "P02_분리선반_150x130x4": {
+  "orient": "on_side_x",
+  "overhang_cm2": 35.2,
+  "dims": [
+   38,
+   132,
+   159
+  ],
+  "fits": true
+ },
+ "P04_보조배터리_고정가로대": {
+  "orient": "as_modeled",
+  "overhang_cm2": 0.0,
+  "dims": [
+   88,
+   10,
+   3
+  ],
+  "fits": true
+ },
+ "P05_리포배터리_고정가로대": {
+  "orient": "as_modeled",
+  "overhang_cm2": 0.0,
+  "dims": [
+   56,
+   10,
+   3
+  ],
+  "fits": true
+ },
+ "P06_L_U받침_V홈": {
+  "orient": "on_side_x",
+  "overhang_cm2": 1.9,
+  "dims": [
+   31,
+   46,
+   20
+  ],
+  "fits": true
+ },
+ "P06_R_U받침_V홈": {
+  "orient": "on_side_x",
+  "overhang_cm2": 1.9,
+  "dims": [
+   31,
+   46,
+   20
+  ],
+  "fits": true
+ },
+ "P07_L_평판": {
+  "orient": "as_modeled",
+  "overhang_cm2": 0.0,
+  "dims": [
+   20,
+   46,
+   4
+  ],
+  "fits": true
+ },
+ "P07_R_평판": {
+  "orient": "as_modeled",
+  "overhang_cm2": 0.0,
+  "dims": [
+   20,
+   46,
+   4
+  ],
+  "fits": true
+ },
+ "P09_카메라_클립받침": {
+  "orient": "on_side_x",
+  "overhang_cm2": 7.6,
+  "dims": [
+   64,
+   30,
+   78
+  ],
+  "fits": true
+ },
+ "P10_해치백덮개": {
+  "orient": "on_back_y",
+  "overhang_cm2": 131.1,
+  "dims": [
+   172,
+   87,
+   183
+  ],
+  "fits": true
+ },
+ "P11_DRIVER_脱落防止": {
+  "orient": "as_modeled",
+  "overhang_cm2": 0.0,
+  "dims": [
+   18,
+   10,
+   3
+  ],
+  "fits": true
+ },
+ "P11_DRIVER_脱落防止.001": {
+  "orient": "as_modeled",
+  "overhang_cm2": 0.0,
+  "dims": [
+   18,
+   10,
+   3
+  ],
+  "fits": true
+ },
+ "P11_DRIVER_脱落防止.002": {
+  "orient": "as_modeled",
+  "overhang_cm2": 0.0,
+  "dims": [
+   18,
+   10,
+   3
+  ],
+  "fits": true
+ },
+ "P11_DRIVER_脱落防止.003": {
+  "orient": "as_modeled",
+  "overhang_cm2": 0.0,
+  "dims": [
+   18,
+   10,
+   3
+  ],
+  "fits": true
+ },
+ "P11_PI_脱落防止": {
+  "orient": "as_modeled",
+  "overhang_cm2": 0.0,
+  "dims": [
+   18,
+   10,
+   3
+  ],
+  "fits": true
+ },
+ "P11_PI_脱落防止.001": {
+  "orient": "as_modeled",
+  "overhang_cm2": 0.0,
+  "dims": [
+   18,
+   10,
+   3
+  ],
+  "fits": true
+ },
+ "P11_PI_脱落防止.002": {
+  "orient": "as_modeled",
+  "overhang_cm2": 0.0,
+  "dims": [
+   18,
+   10,
+   3
+  ],
+  "fits": true
+ },
+ "P11_PI_脱落防止.003": {
+  "orient": "as_modeled",
+  "overhang_cm2": 0.0,
+  "dims": [
+   18,
+   10,
+   3
+  ],
+  "fits": true
+ },
+ "P13_カメラ_뒤클립누름판": {
+  "orient": "on_back_y",
+  "overhang_cm2": 0.0,
+  "dims": [
+   74,
+   12,
+   4
+  ],
+  "fits": true
+ },
+ "P14_BANK_뒤잠금판": {
+  "orient": "on_back_y",
+  "overhang_cm2": 0.0,
+  "dims": [
+   88,
+   20,
+   4
+  ],
+  "fits": true
+ },
+ "P14_LIPO_뒤잠금판": {
+  "orient": "on_back_y",
+  "overhang_cm2": 0.0,
+  "dims": [
+   56,
+   28,
+   4
+  ],
+  "fits": true
+ }
+}

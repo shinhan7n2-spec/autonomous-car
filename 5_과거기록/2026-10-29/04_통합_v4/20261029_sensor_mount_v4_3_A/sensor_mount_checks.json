@@ -1,0 +1,295 @@
+{
+ "version": "v4.3",
+ "status": "design review; not machine-ready",
+ "assumptions": {
+  "pcb_mm": {
+   "w": 45,
+   "h": 21,
+   "t": 1.6
+  },
+  "transducer_mm": {
+   "pitch": 26,
+   "d": 16,
+   "length": 12
+  },
+  "header": "5-pin straight down, breadboard type (assumed, to confirm)",
+  "transducer_center_z": 112.5,
+  "sensor_insert": "slide PCB down into pillar grooves BEFORE fitting camera deck"
+ },
+ "fasteners_new": {
+  "M3x20+M3 nut (deck to shelf)": 2
+ },
+ "camera_deck_lift_mm": 6.0,
+ "parts": {
+  "P01_한장바닥판_190x185x5": {
+   "non_manifold_edges": 0,
+   "islands": 1,
+   "dims_mm": [
+    190.0,
+    185.0,
+    55.0
+   ]
+  },
+  "P09_카메라_클립받침": {
+   "non_manifold_edges": 0,
+   "islands": 1,
+   "dims_mm": [
+    78.0,
+    30.0,
+    63.52
+   ]
+  },
+  "P02_분리선반_150x130x4": {
+   "non_manifold_edges": 0,
+   "islands": 1,
+   "dims_mm": [
+    159.0,
+    132.0,
+    38.0
+   ]
+  },
+  "P10_해치백덮개": {
+   "non_manifold_edges": 0,
+   "islands": 1,
+   "dims_mm": [
+    172.0,
+    183.0,
+    86.52
+   ]
+  }
+ },
+ "interference": [],
+ "designed_contacts": [
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "P09_카메라_클립받침",
+   "tri_pairs": 88
+  },
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "REF_HY_SRF05_기판_45x21x1.6_추정",
+   "tri_pairs": 6
+  },
+  {
+   "a": "P09_카메라_클립받침",
+   "b": "P02_분리선반_150x130x4",
+   "tri_pairs": 8
+  }
+ ],
+ "preexisting_contact_in_v4_2": [
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "P14_BANK_뒤잠금판",
+   "tri_pairs": 39
+  },
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "P14_LIPO_뒤잠금판",
+   "tri_pairs": 36
+  },
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "리포배터리",
+   "tri_pairs": 63
+  },
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "보조배터리",
+   "tri_pairs": 153
+  },
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "캐스터 휠",
+   "tri_pairs": 7
+  },
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "P04_보조배터리_고정가로대",
+   "tri_pairs": 50
+  },
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "P05_리포배터리_고정가로대",
+   "tri_pairs": 19
+  },
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "REF_M4_30_지지대",
+   "tri_pairs": 74
+  },
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "REF_M4_30_지지대.001",
+   "tri_pairs": 74
+  },
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "REF_M4_30_지지대.002",
+   "tri_pairs": 92
+  },
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "REF_M4_30_지지대.003",
+   "tri_pairs": 85
+  },
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "P06_L_U받침_V홈",
+   "tri_pairs": 11
+  },
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "P06_R_U받침_V홈",
+   "tri_pairs": 13
+  },
+  {
+   "a": "P01_한장바닥판_190x185x5",
+   "b": "P10_해치백덮개",
+   "tri_pairs": 75
+  },
+  {
+   "a": "P09_카메라_클립받침",
+   "b": "REF_카메라_힌지받침_추정",
+   "tri_pairs": 2
+  },
+  {
+   "a": "P02_분리선반_150x130x4",
+   "b": "라즈베리",
+   "tri_pairs": 15
+  },
+  {
+   "a": "P02_분리선반_150x130x4",
+   "b": "L298N_43x43x27_SPEC_ENVELOPE",
+   "tri_pairs": 240
+  },
+  {
+   "a": "P02_분리선반_150x130x4",
+   "b": "REF_M4_30_지지대",
+   "tri_pairs": 48
+  },
+  {
+   "a": "P02_분리선반_150x130x4",
+   "b": "REF_M4_30_지지대.001",
+   "tri_pairs": 74
+  },
+  {
+   "a": "P02_분리선반_150x130x4",
+   "b": "REF_M4_30_지지대.002",
+   "tri_pairs": 56
+  },
+  {
+   "a": "P02_분리선반_150x130x4",
+   "b": "REF_M4_30_지지대.003",
+   "tri_pairs": 82
+  },
+  {
+   "a": "P02_분리선반_150x130x4",
+   "b": "P10_해치백덮개",
+   "tri_pairs": 12
+  },
+  {
+   "a": "P02_분리선반_150x130x4",
+   "b": "P11_PI_脱落防止",
+   "tri_pairs": 8
+  },
+  {
+   "a": "P02_분리선반_150x130x4",
+   "b": "P11_PI_脱落防止.001",
+   "tri_pairs": 9
+  },
+  {
+   "a": "P02_분리선반_150x130x4",
+   "b": "P11_PI_脱落防止.002",
+   "tri_pairs": 16
+  },
+  {
+   "a": "P02_분리선반_150x130x4",
+   "b": "P11_PI_脱落防止.003",
+   "tri_pairs": 8
+  },
+  {
+   "a": "P02_분리선반_150x130x4",
+   "b": "P11_DRIVER_脱落防止",
+   "tri_pairs": 8
+  },
+  {
+   "a": "P02_분리선반_150x130x4",
+   "b": "P11_DRIVER_脱落防止.001",
+   "tri_pairs": 20
+  },
+  {
+   "a": "P02_분리선반_150x130x4",
+   "b": "P11_DRIVER_脱落防止.002",
+   "tri_pairs": 9
+  },
+  {
+   "a": "P02_분리선반_150x130x4",
+   "b": "P11_DRIVER_脱落防止.003",
+   "tri_pairs": 12
+  },
+  {
+   "a": "P10_해치백덮개",
+   "b": "장식_헤드램프_부품추가아님",
+   "tri_pairs": 4
+  },
+  {
+   "a": "P10_해치백덮개",
+   "b": "장식_헤드램프_부품추가아님.001",
+   "tri_pairs": 4
+  },
+  {
+   "a": "P13_カメラ_뒤클립누름판",
+   "b": "REF_볼트머리_추정",
+   "tri_pairs": 65
+  },
+  {
+   "a": "P13_カメラ_뒤클립누름판",
+   "b": "REF_볼트머리_추정.001",
+   "tri_pairs": 65
+  },
+  {
+   "a": "REF_카메라_몸체_치수추정",
+   "b": "REF_렌즈",
+   "tri_pairs": 48
+  },
+  {
+   "a": "REF_카메라_몸체_치수추정",
+   "b": "REF_본체힌지_추정",
+   "tri_pairs": 4
+  },
+  {
+   "a": "REF_카메라_힌지받침_추정",
+   "b": "REF_카메라_앞걸림턱_추정",
+   "tri_pairs": 3
+  },
+  {
+   "a": "REF_카메라_힌지받침_추정",
+   "b": "REF_본체힌지_추정",
+   "tri_pairs": 4
+  },
+  {
+   "a": "REF_카메라_힌지받침_추정",
+   "b": "REF_뒤접이힌지_추정",
+   "tri_pairs": 9
+  },
+  {
+   "a": "REF_카메라_뒤접이판_추정",
+   "b": "REF_뒤접이힌지_추정",
+   "tri_pairs": 2
+  }
+ ],
+ "transducer_forward_clear": {
+  "REF_HY_SRF05_송수신기_0": true,
+  "REF_HY_SRF05_송수신기_1": true
+ },
+ "reference_geometry_unchanged": {
+  "라즈베리": true,
+  "리포배터리": true,
+  "보조배터리": true,
+  "모터": true,
+  "Motor_Right": true,
+  "메카넘휠": true,
+  "Wheel_Right_REFERENCE_ONLY": true,
+  "캐스터 휠": true
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "version": "v5.2",
+ "caster_plate_from_scan_mm": [
+  68,
+  51
+ ],
+ "hole_pattern_mm": [
+  54,
+  24
+ ],
+ "hole_dia_scan_mm": "4.4-5.0 (M5)",
+ "orientation": "long side along car width (rotated 90deg vs scan)",
+ "holes_xy": [
+  [
+   -27,
+   38
+  ],
+  [
+   -27,
+   62
+  ],
+  [
+   27,
+   38
+  ],
+  [
+   27,
+   62
+  ]
+ ],
+ "slot": "5.5mm wide, +-2mm along x",
+ "nut_pocket": "13x8.2x4mm in top face, M5 nut flush; M5x10 from below through caster plate + base",
+ "old_38x28_slots": "filled",
+ "non_manifold_edges": 3,
+ "base_contacts_after": [
+  "P10_들어올림덮개_v5.1",
+  "P09_카메라_클립받침",
+  "P14_BANK_뒤잠금판",
+  "P14_LIPO_뒤잠금판",
+  "리포배터리",
+  "보조배터리",
+  "캐스터 휠",
+  "P04_보조배터리_고정가로대",
+  "P05_리포배터리_고정가로대",
+  "REF_M4_30_지지대",
+  "REF_M4_30_지지대.001",
+  "REF_M4_30_지지대.002",
+  "REF_M4_30_지지대.003",
+  "P06_L_U받침_V홈",
+  "P06_R_U받침_V홈",
+  "REF_HY_SRF05_기판_45x21x1.6_추정"
+ ],
+ "note": "scan surface rough, measure plate holes before printing"
+}

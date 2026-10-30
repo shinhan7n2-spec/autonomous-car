@@ -1,0 +1,182 @@
+[
+ {
+  "file": "P01_한장바닥판_190x185x5.stl",
+  "print_size_mm": [
+   190.0,
+   185.1,
+   55.0
+  ],
+  "steep_overhang_cm2": 4.2
+ },
+ {
+  "file": "P02_분리선반_150x130x4.stl",
+  "print_size_mm": [
+   159.0,
+   137.5,
+   35.0
+  ],
+  "steep_overhang_cm2": 2.2
+ },
+ {
+  "file": "P04_배터리_고정가로대_일체.stl",
+  "print_size_mm": [
+   146.0,
+   11.5,
+   10.0
+  ],
+  "steep_overhang_cm2": 0.4
+ },
+ {
+  "file": "P06_L_U받침_V홈.stl",
+  "print_size_mm": [
+   31.5,
+   46.0,
+   20.0
+  ],
+  "steep_overhang_cm2": 1.9
+ },
+ {
+  "file": "P06_R_U받침_V홈.stl",
+  "print_size_mm": [
+   31.5,
+   46.0,
+   20.0
+  ],
+  "steep_overhang_cm2": 1.9
+ },
+ {
+  "file": "P07_L_평판.stl",
+  "print_size_mm": [
+   20.0,
+   46.0,
+   4.0
+  ],
+  "steep_overhang_cm2": 0.0
+ },
+ {
+  "file": "P07_R_평판.stl",
+  "print_size_mm": [
+   20.0,
+   46.0,
+   4.0
+  ],
+  "steep_overhang_cm2": 0.0
+ },
+ {
+  "file": "P09_카메라_클립받침.stl",
+  "print_size_mm": [
+   63.5,
+   30.0,
+   78.0
+  ],
+  "steep_overhang_cm2": 7.6
+ },
+ {
+  "file": "P10_들어올림덮개_v5_1.stl",
+  "print_size_mm": [
+   175.0,
+   183.0,
+   86.7
+  ],
+  "steep_overhang_cm2": 7.5
+ },
+ {
+  "file": "P11_DRIVER_脱落防止.stl",
+  "print_size_mm": [
+   18.0,
+   10.0,
+   3.0
+  ],
+  "steep_overhang_cm2": 0.0
+ },
+ {
+  "file": "P11_DRIVER_脱落防止_001.stl",
+  "print_size_mm": [
+   18.0,
+   10.0,
+   3.0
+  ],
+  "steep_overhang_cm2": 0.0
+ },
+ {
+  "file": "P11_DRIVER_脱落防止_002.stl",
+  "print_size_mm": [
+   18.0,
+   10.0,
+   3.0
+  ],
+  "steep_overhang_cm2": 0.0
+ },
+ {
+  "file": "P11_DRIVER_脱落防止_003.stl",
+  "print_size_mm": [
+   18.0,
+   10.0,
+   3.0
+  ],
+  "steep_overhang_cm2": 0.0
+ },
+ {
+  "file": "P11_PI_脱落防止.stl",
+  "print_size_mm": [
+   18.0,
+   10.0,
+   3.0
+  ],
+  "steep_overhang_cm2": 0.0
+ },
+ {
+  "file": "P11_PI_脱落防止_001.stl",
+  "print_size_mm": [
+   18.0,
+   10.0,
+   3.0
+  ],
+  "steep_overhang_cm2": 0.0
+ },
+ {
+  "file": "P11_PI_脱落防止_002.stl",
+  "print_size_mm": [
+   18.0,
+   10.0,
+   3.0
+  ],
+  "steep_overhang_cm2": 0.0
+ },
+ {
+  "file": "P11_PI_脱落防止_003.stl",
+  "print_size_mm": [
+   18.0,
+   10.0,
+   3.0
+  ],
+  "steep_overhang_cm2": 0.0
+ },
+ {
+  "file": "P13_カメラ_뒤클립누름판.stl",
+  "print_size_mm": [
+   74.0,
+   12.0,
+   4.0
+  ],
+  "steep_overhang_cm2": 0.0
+ },
+ {
+  "file": "P14_BANK_뒤잠금판.stl",
+  "print_size_mm": [
+   88.0,
+   19.5,
+   4.0
+  ],
+  "steep_overhang_cm2": 0.0
+ },
+ {
+  "file": "P14_LIPO_뒤잠금판.stl",
+  "print_size_mm": [
+   56.0,
+   28.0,
+   17.8
+  ],
+  "steep_overhang_cm2": 0.0
+ }
+]
